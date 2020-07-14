@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Blog">
+  <meta name="author" content="Ai Zf">
+  <meta name="keywords" content="">
+  <title>一些面试题 - Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener">
+                <i class="iconfont icon-github-fill"></i>
+                GitHub
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      970 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <h2 id="1-将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组"><a href="#1-将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组" class="headerlink" title="1 将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组"></a>1 将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组</h2><p><code>arr.toString().split(&quot;,&quot;)</code></p>
+<p><code>arr.flat(Infinity)</code></p>
+<p><code>[].concat.apply([],arr)</code></p>
+<p><code>[].concat(...a)</code></p>
+<h3 id="1-1-去重"><a href="#1-1-去重" class="headerlink" title="1.1 去重"></a>1.1 去重</h3><div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">array_unique</span> (<span class="hljs-params">arr</span>) </span>&#123;
+  <span class="hljs-keyword">let</span> len = arr.length
+  <span class="hljs-keyword">if</span> (!len) &#123;
+    <span class="hljs-keyword">return</span> []
+  &#125;
+  <span class="hljs-keyword">let</span> tmp = []
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;
+    <span class="hljs-keyword">if</span> (tmp.findIndex(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> <span class="hljs-built_in">JSON</span>.stringify(v) === <span class="hljs-built_in">JSON</span>.stringify(arr[i])) === <span class="hljs-number">-1</span>) &#123;
+      tmp.push(arr[i])
+    &#125;
+  &#125;
+  <span class="hljs-keyword">return</span> tmp
+&#125;</code></pre></div>
+
+<h2 id="2-重排，重绘"><a href="#2-重排，重绘" class="headerlink" title="2 重排，重绘"></a>2 重排，重绘</h2><p>执行下面代码会发生什么?</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">document</span>.body.bgColor=<span class="hljs-string">"black"</span>
+<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">1000000000</span>;i++)&#123;
+    i+<span class="hljs-number">1</span>
+&#125;
+<span class="hljs-built_in">document</span>.body.bgColor=<span class="hljs-string">"red"</span></code></pre></div>
+
+<p>答案：(不会变黑)卡一会，再变红</p>
+<h2 id="3-当键入网址后，到网页显示，其间发生了什么"><a href="#3-当键入网址后，到网页显示，其间发生了什么" class="headerlink" title="3 当键入网址后，到网页显示，其间发生了什么"></a>3 当键入网址后，到网页显示，其间发生了什么</h2><p><a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247487853&amp;idx=1&amp;sn=482b8466277c412f5a3c9b249bb7515c&amp;chksm=fa0e7eeccd79f7fa45d90b6ff409a8fee442d5ccb7c1cf774fc541405c03ad75c8b652f2acd1&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1585113462735&amp;sharer_shareid=7af7c97c59bcd51392140a2bf05dcfd5#rd" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247487853&amp;idx=1&amp;sn=482b8466277c412f5a3c9b249bb7515c&amp;chksm=fa0e7eeccd79f7fa45d90b6ff409a8fee442d5ccb7c1cf774fc541405c03ad75c8b652f2acd1&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1585113462735&amp;sharer_shareid=7af7c97c59bcd51392140a2bf05dcfd5#rd</a></p>
+<ol>
+<li>浏览器解析 URL</li>
+<li>浏览器确定了 Web 服务器和文件名，根据这些信息来生成 HTTP 请求</li>
+<li>DNS 服务器，查询服务器域名对于的 IP 地址<ol>
+<li>根域是在最顶层，它的下一层就是 com 等顶级域，再下面是 xxx.com</li>
+<li>根域的 DNS 服务器信息保存在互联网中所有的 DNS 服务器中。这样一来，任何 DNS 服务器就都可以找到并访问根域 DNS 服务器了。</li>
+<li>客户端只要能够找到任意一台 DNS 服务器，就可以通过它找到根域 DNS 服务器，然后再一路顺藤摸瓜找到位于下层的某台目标 DNS 服务器。</li>
+</ol>
+</li>
+<li>通过 DNS 获取到 IP 后，就可以把 HTTP 的传输工作交给操作系统中的协议栈。<ol>
+<li>HTTP 是基于 TCP 协议传输的,三次握手,TCP 报文生成</li>
+<li>TCP 模块在各阶段操作时，都需要委托 <strong>IP 模块</strong>将数据封装成网络包发送给通信对象。</li>
+<li>生成了 IP 头部之后，接下来网络包还需要在 IP 头部的前面加上 MAC 头部用于两点传输。</li>
+<li>…</li>
+</ol>
+</li>
+<li>通过交换机，交换机工作在 MAC 层</li>
+<li>路由器，ip层，并在此被转发到下一个路由器或目标设备</li>
+<li>服务器代理，负载均衡</li>
+<li>到达服务器，逐步删除头部，获取信息</li>
+<li>通过协议栈返回客户端</li>
+<li>最后，向服务器发起了 TCP 四次挥手，至此双方的连接就断开了。</li>
+<li>解析页面<ol>
+<li>解析HTML，构建DOM树</li>
+<li>解析CSS，生成CSS规则树</li>
+<li>合并DOM树和CSS规则，生成render树</li>
+<li>布局render树（Layout/reflow），负责各元素尺寸、位置的计算</li>
+<li>绘制render树（paint），绘制页面像素信息</li>
+<li>浏览器会将各层的信息发送给GPU，GPU会将各层合成（composite），显示在屏幕上</li>
+</ol>
+</li>
+<li>在解析html时，会遇到一些资源连接<ol>
+<li>遇到上述的外链时，会单独开启一个下载线程去下载资源</li>
+<li>css资源，下载异步，不会阻塞DOM树，会阻塞渲染</li>
+<li>JS脚本资源，阻塞浏览器的解析，加上defer或async属性，这样脚本就变成异步</li>
+<li>img图片类资源，直接就是异步下载，不会阻塞解析，下载完毕后直接用图片替换原有src的地方</li>
+</ol>
+</li>
+<li>跨域</li>
+<li>http缓存</li>
+</ol>
+<h2 id="4-考察this"><a href="#4-考察this" class="headerlink" title="4 考察this"></a>4 考察this</h2><div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span>(<span class="hljs-params"></span>) </span>&#123;
+    alert(<span class="hljs-number">1</span>)
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Fn</span>(<span class="hljs-params"></span>) </span>&#123;
+    A = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        alert(<span class="hljs-number">2</span>)
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+&#125;
+Fn.A = A
+Fn.prototype = &#123;
+    A: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+        alert(<span class="hljs-number">3</span>)
+    &#125;
+&#125;
+A()
+Fn.A()
+Fn().A()
+<span class="hljs-keyword">new</span> Fn.A()
+<span class="hljs-keyword">new</span> Fn().A()
+<span class="hljs-keyword">new</span> <span class="hljs-keyword">new</span> Fn().A()
+
+<span class="hljs-comment">// 结果：</span>
+<span class="hljs-comment">// "1"</span>
+<span class="hljs-comment">// "1"</span>
+<span class="hljs-comment">// "2"</span>
+<span class="hljs-comment">// "1"</span>
+<span class="hljs-comment">// "3"</span>
+<span class="hljs-comment">// TypeError:箭头函数不能被new,追加为什么</span></code></pre></div>
+
+<h2 id="5-考察this"><a href="#5-考察this" class="headerlink" title="5 考察this"></a>5 考察this</h2><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">var</span> y = &#123;
+    x: <span class="hljs-number">3</span>,
+    z: (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>&#123;
+        <span class="hljs-keyword">this</span>.x *= x;
+        x += <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">n</span>) </span>&#123;
+            <span class="hljs-keyword">this</span>.x *= n;
+            x += <span class="hljs-number">3</span>;
+            <span class="hljs-built_in">console</span>.log(x);
+        &#125;
+    &#125;)(x)
+&#125;;
+<span class="hljs-keyword">var</span> m = y.z;
+m(<span class="hljs-number">4</span>);
+y.z(<span class="hljs-number">5</span>);
+<span class="hljs-built_in">console</span>.log(x, y.x)
+
+<span class="hljs-comment">// 7</span>
+<span class="hljs-comment">// 10</span>
+<span class="hljs-comment">// 16 15</span></code></pre></div>
+
+<h2 id="6-10"><a href="#6-10" class="headerlink" title="6 ++[[]][+[]]+[+[]]==10?"></a>6 ++[[]][+[]]+[+[]]==10?</h2><p><a href="./js/隐式转换.md">隐式转换</a></p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// 1</span>
+(++[[]][+[]])
++
+([+[]])
+
+<span class="hljs-comment">// 2</span>
+(++[[]][+[]]) + [<span class="hljs-number">0</span>]
+
+<span class="hljs-comment">// 3</span>
+(++[[]][<span class="hljs-number">0</span>]) + [<span class="hljs-number">0</span>]
+
+<span class="hljs-comment">// 3.1</span>
+
+<span class="hljs-comment">// ++([[]][0])在浏览器不报错，而++[]报错</span>
+
+<span class="hljs-comment">// 4</span>
+<span class="hljs-comment">// 4.1</span>
+<span class="hljs-keyword">var</span> a = [[]][<span class="hljs-number">0</span>];    <span class="hljs-comment">// []</span>
+++a;                <span class="hljs-comment">// [] + 1</span>
+<span class="hljs-comment">// 4.2</span>
+([] + <span class="hljs-number">1</span>) + [<span class="hljs-number">0</span>]
+
+<span class="hljs-comment">// 5</span>
+<span class="hljs-string">"1"</span> + [<span class="hljs-number">0</span>]
+
+<span class="hljs-comment">// 6</span>
+<span class="hljs-string">"10"</span></code></pre></div>
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/CSS/BFC%E5%92%8CIFC/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">BFC和IFC</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                        <span class="hidden-mobile">一些性能优化方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "一些面试题&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Blog">
+  <meta name="author" content="Ai Zf">
+  <meta name="keywords" content="">
+  <title>meta,link和script - Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener">
+                <i class="iconfont icon-github-fill"></i>
+                GitHub
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      901 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <h2 id="1-meta"><a href="#1-meta" class="headerlink" title="1 meta"></a>1 meta</h2><p>可提供有关页面的元信息(meta-information),比如针对搜索引擎和更新频度的描述和关键词。</p>
+<h3 id="1-1-常用"><a href="#1-1-常用" class="headerlink" title="1.1 常用"></a>1.1 常用</h3><p>设置编码格式</p>
+<p><code>&lt;meta charset=&#39;utf-8&#39;&gt;</code></p>
+<p>设置关键字</p>
+<p><code>&lt;meta name=&quot;keywords&quot; content=&quot;音乐 播放器 H5&quot;&gt;</code></p>
+<p>设置描述</p>
+<p><code>&lt;meta name=&quot;description&quot; content=&quot;用H5实现音乐播放器控件&quot;&gt;</code></p>
+<p><code>viewport</code> 可以让布局在移动端的浏览器上更好的显示</p>
+<p><code>width = device-width</code> 布局宽度等于设备宽度</p>
+<p><code>intial-scale</code>:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no&quot;&gt;</code></p>
+<p>IE 支持通过特定的 <code>&lt;meta&gt;</code> 标签来确定绘制当前页面所应该采用的 IE 版本。除非有强烈的特殊需求，否则最好是设置为<code>edge mode</code>，从而通知IE采用其所支持的最新的模式。</p>
+<p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;</code></p>
+<h2 id="2-link"><a href="#2-link" class="headerlink" title="2 link"></a>2 link</h2><p><code>&lt;link&gt;</code> 标签定义文档与外部资源的关系。</p>
+<p>此元素只能存在于 <code>head</code> 部分，不过它可出现任何次数。</p>
+<p>不会阻塞dom tree的生成，但是会阻塞paint（也有可能是render tree）(阻止了css tree)</p>
+<h3 id="2-2-常用"><a href="#2-2-常用" class="headerlink" title="2.2 常用"></a>2.2 常用</h3><p>浏览器左上角图标</p>
+<p><code>&lt;link rel=&#39;icon&#39; href=&#39;1.ico&#39;&gt;</code></p>
+<p>引入css文件路径</p>
+<p><code>&lt;link rel=&#39;stylesheet&#39; type=&#39;text/css&#39; href=&#39;&#39;&gt;</code></p>
+<h2 id="3-script"><a href="#3-script" class="headerlink" title="3 script"></a>3 script</h2><p>直接codeing js代码</p>
+<p><code>&lt;script type=&#39;text/javascript&#39;&gt;&lt;/script&gt;</code></p>
+<p>引入js文件</p>
+<p><code>&lt;script src=&#39;&#39;&gt;&lt;/script&gt;</code></p>
+<h3 id="3-1-属性"><a href="#3-1-属性" class="headerlink" title="3.1 属性"></a>3.1 属性</h3><h4 id="type指示脚本的-MIME-类型"><a href="#type指示脚本的-MIME-类型" class="headerlink" title="type指示脚本的 MIME 类型"></a><code>type</code>指示脚本的 MIME 类型</h4><h4 id="async规定异步执行脚本（仅适用于外部脚本）"><a href="#async规定异步执行脚本（仅适用于外部脚本）" class="headerlink" title="async规定异步执行脚本（仅适用于外部脚本）"></a><code>async</code>规定异步执行脚本（仅适用于外部脚本）</h4><p><code>async</code>的执行，并不会按着script在页面中的顺序来执行，而是谁先加载完谁执行。</p>
+<p><code>DOMContentLoaded</code>事件的触发并不受<code>async</code>脚本加载的影响，在脚本加载完之前，就已经触发了<code>DOMContentLoaded</code>。</p>
+<blockquote>
+<p><code>DOMContentLoaded</code> 事件：当初始的 HTML 文档被完全加载和解析完成之后，<code>DOMContentLoaded</code> 事件被触发，而无需等待样式表、图像和子框架的完成加载。</p>
+</blockquote>
+<p><strong>应用场景</strong>:脚本并不关心页面中的DOM元素,也不被依赖</p>
+<h4 id="defer规定是否对脚本执行进行延迟，直到页面加载为止"><a href="#defer规定是否对脚本执行进行延迟，直到页面加载为止" class="headerlink" title="defer规定是否对脚本执行进行延迟，直到页面加载为止"></a><code>defer</code>规定是否对脚本执行进行延迟，直到页面加载为止</h4><p><code>defer</code>脚本会在文档渲染完毕后，DOMContentLoaded事件调用前执行。</p>
+<p><strong>应用场景</strong>:脚本代码依赖于页面中的DOM元素,或者被其他脚本文件依赖</p>
+<p><code>async</code>和<code>defer</code>，这两个属性使得script都不会阻塞DOM的渲染</p>
+<h4 id="src外部脚本文件的-URL"><a href="#src外部脚本文件的-URL" class="headerlink" title="src外部脚本文件的 URL"></a><code>src</code>外部脚本文件的 URL</h4><h3 id="3-2-异步加载-defer、async、module-和预加载-preload、prefetch、dns-prefetch、preconnect-、prerender"><a href="#3-2-异步加载-defer、async、module-和预加载-preload、prefetch、dns-prefetch、preconnect-、prerender" class="headerlink" title="3.2 异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)"></a>3.2 异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)</h3><h4 id="3-2-1-module"><a href="#3-2-1-module" class="headerlink" title="3.2.1 module"></a>3.2.1 module</h4><ul>
+<li>默认使用了”use strict”模式</li>
+<li>模块只会加载一次，无论前后你写了多少次。</li>
+<li>不支持&lt;!–const a = 1–&gt;注释。</li>
+<li>module有自己的词法作用域，比如定义一个 var a = 1，并不会创建一个全局变量，因此你并不能通过window.a 访问到它的值。</li>
+</ul>
+<h4 id="3-2-2-preload"><a href="#3-2-2-preload" class="headerlink" title="3.2.2 preload"></a>3.2.2 preload</h4><p>preload翻译过来就是预加载，一旦启用后便会告知浏览器应该尽快的加载某个资源，如果提取的资源3s内未在当前使用，在谷歌开发工具将会触发警告消息</p>
+<h4 id="3-2-3-prefetch"><a href="#3-2-3-prefetch" class="headerlink" title="3.2.3 prefetch"></a>3.2.3 prefetch</h4><p>简而言之预提取就是在我们页面加载完成后，在带宽可用的情况下，加载用户下一步期待的页面资源</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/html/">html</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/HTML/postMessage%E5%92%8Conmessage/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">postMessage和onmessage</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/HTML/link/">
+                        <span class="hidden-mobile">link标签</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "meta,link和script&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Blog">
+  <meta name="author" content="Ai Zf">
+  <meta name="keywords" content="">
+  <title>Web Components - Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener">
+                <i class="iconfont icon-github-fill"></i>
+                GitHub
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      666 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p><a href="https://juejin.im/post/5badfc53f265da0af77527b8#heading-12" target="_blank" rel="noopener">https://juejin.im/post/5badfc53f265da0af77527b8#heading-12</a></p>
+<p>Web Components本身不是一个规范，而是由W3C提出的另外4个规范的合集。这四个规范是：</p>
+<ul>
+<li>HTML Template</li>
+<li>HTML Imports</li>
+<li>Shadow DOM</li>
+<li>Custom Elements</li>
+</ul>
+<h2 id="HTML-Template"><a href="#HTML-Template" class="headerlink" title="HTML Template"></a>HTML Template</h2><p>通过<code>&lt;template&gt;</code>标签存放模板</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mytemplate"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"great image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre></div>
+
+<h3 id="是否支持"><a href="#是否支持" class="headerlink" title="是否支持"></a>是否支持</h3><p>检查<code>&lt;template&gt;</code>是否拥有 content 属性</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">supportsTemplate</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'content'</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'template'</span>);
+&#125;
+
+<span class="hljs-keyword">if</span> (supportsTemplate()) &#123;
+    <span class="hljs-comment">// 检测通过！</span>
+&#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-comment">// 使用旧的模板技术或库。</span>
+&#125;</code></pre></div>
+
+<h3 id="激活模板"><a href="#激活模板" class="headerlink" title="激活模板"></a>激活模板</h3><p>即渲染出模板里面的内容。激活模板最简单的方法就是使用 <code>document.importNode()</code>对模板的 <code>.content</code> 进行深拷贝。</p>
+<p><code>.content</code> 为只读属性，关联一个包含模板内容的 DocumentFragment。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> t = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#mytemplate'</span>);
+<span class="hljs-comment">// 在运行时填充 src。</span>
+t.content.querySelector(<span class="hljs-string">'img'</span>).src = <span class="hljs-string">'logo.png'</span>;
+
+<span class="hljs-keyword">var</span> clone = <span class="hljs-built_in">document</span>.importNode(t.content, <span class="hljs-literal">true</span>);
+<span class="hljs-built_in">document</span>.body.appendChild(clone);</code></pre></div>
+
+<h2 id="HTML-Imports"><a href="#HTML-Imports" class="headerlink" title="HTML Imports"></a>HTML Imports</h2><p>之前在页面引入另一个页面或片段往往是通过<code>iframe</code>或者<code>ajax</code>异步加载，而现在我们可以这样做：</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"import"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/path/to/imports/stuff.html"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="actionscript">    <span class="hljs-keyword">var</span> content = document.querySelector(<span class="hljs-string">'link[rel="import"]'</span>)<span class="hljs-meta">.<span class="hljs-meta-keyword">import</span>;</span></span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div>
+
+<h3 id="是否支持-1"><a href="#是否支持-1" class="headerlink" title="是否支持"></a>是否支持</h3><p>可验证 <code>&lt;link&gt;</code> 元素上是否存在 import：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">supportsImports</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'import'</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>);
+&#125;
+
+<span class="hljs-keyword">if</span> (supportsImports()) &#123;
+    <span class="hljs-comment">// 支持导入</span>
+&#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-comment">// 使用其他方法加载文件</span>
+&#125;</code></pre></div>
+
+<h2 id="Shadow-DOM"><a href="#Shadow-DOM" class="headerlink" title="Shadow DOM"></a>Shadow DOM</h2><h2 id="Custom-Elements"><a href="#Custom-Elements" class="headerlink" title="Custom Elements"></a>Custom Elements</h2><p>自定义元素，首先有个硬性规定，自定义元素的命名中必须要有中划线“<code>-</code>”，否则便是未知元素了。</p>
+<p>自定义元素分为两种:</p>
+<ul>
+<li>自主自定义元素</li>
+<li>自定义内置元素</li>
+</ul>
+<h3 id="自特性主自定义元素-Autonomous-custom-elements"><a href="#自特性主自定义元素-Autonomous-custom-elements" class="headerlink" title="自特性主自定义元素(Autonomous custom elements)"></a>自特性主自定义元素(Autonomous custom elements)</h3><p>不具备任何已有元素的，其样式和行为完全自定义，如我们要定义一个这样的元素：</p>
+<p><code>&lt;flag-icon country=&quot;cn&quot;&gt;&lt;/flag-icon&gt;</code></p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FlagIcon</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HTMLElement</span> </span>&#123;
+    <span class="hljs-keyword">constructor</span>() &#123;
+      <span class="hljs-keyword">super</span>();
+      <span class="hljs-keyword">this</span>._countryCode = <span class="hljs-literal">null</span>;
+    &#125;
+
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">get</span> observedAttributes() &#123; <span class="hljs-keyword">return</span> [<span class="hljs-string">"country"</span>]; &#125;
+
+    attributeChangedCallback(name, oldValue, newValue) &#123;
+      <span class="hljs-comment">// name will always be "country" due to observedAttributes</span>
+      <span class="hljs-keyword">this</span>._countryCode = newValue;
+      <span class="hljs-keyword">this</span>._updateRendering();
+    &#125;
+
+    connectedCallback() &#123;
+      <span class="hljs-keyword">this</span>._updateRendering();
+    &#125;
+
+    <span class="hljs-keyword">get</span> country() &#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._countryCode;
+    &#125;
+
+    <span class="hljs-keyword">set</span> country(v) &#123;
+      <span class="hljs-keyword">this</span>.setAttribute(<span class="hljs-string">"country"</span>, v);
+    &#125;
+
+    _updateRendering() &#123;
+      <span class="hljs-comment">//...</span>
+    &#125;
+&#125;
+
+<span class="hljs-comment">//全局注册该元素</span>
+customElements.define(<span class="hljs-string">"flag-icon"</span>, FlagIcon);</code></pre></div>
+
+<h3 id="自定义内置元素-Customized-built-in-elements"><a href="#自定义内置元素-Customized-built-in-elements" class="headerlink" title="自定义内置元素(Customized built-in elements)"></a>自定义内置元素(Customized built-in elements)</h3><p>继承自已有元素，拥有已有元素的所有特性。</p>
+<p>比如我们自定义一个按钮，集成普通按钮所有的特性，但是当点击的时候会有一个动效，就可以这么做:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlasticButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HTMLButtonElement</span> </span>&#123;
+    <span class="hljs-keyword">constructor</span>() &#123;
+        <span class="hljs-keyword">super</span>();
+
+        <span class="hljs-keyword">this</span>.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; &#123;
+            <span class="hljs-comment">// 动效逻辑</span>
+        &#125;);
+    &#125;
+&#125;</code></pre></div>
+
+<p>不同的是，注册时要加上一个参数</p>
+<div class="hljs"><pre><code class="hljs js">customElements.define(<span class="hljs-string">"plastic-button"</span>, PlasticButton, &#123; <span class="hljs-attr">extends</span>: <span class="hljs-string">"button"</span> &#125;);</code></pre></div>
+
+<p>使用时也稍有不同</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"plastic-button"</span>&gt;</span>点我!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre></div>
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/html/">html</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/HTML/Web%20Worker/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Web Worker</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/HTML/Shadow%20DOM/">
+                        <span class="hidden-mobile">Shadow DOM</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Web Components&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

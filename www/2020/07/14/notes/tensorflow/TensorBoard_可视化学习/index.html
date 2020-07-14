@@ -1,0 +1,11 @@
+<h1 id="TensorBoard-可视化学习"><a href="#TensorBoard-可视化学习" class="headerlink" title="TensorBoard:可视化学习"></a>TensorBoard:可视化学习</h1><p>为了更方便 TensorFlow 程序的理解、调试与优化,可以用 TensorBoard 来展现你的 TensorFlow 图像，绘制图像生成的定量指标图以及附加数据。</p>
+<p>当 TensorBoard 设置完成后，它应该是这样子的：<br>pass</p>
+<h1 id="TensorBoard-图表可视化"><a href="#TensorBoard-图表可视化" class="headerlink" title="TensorBoard: 图表可视化"></a>TensorBoard: 图表可视化</h1><p>为了显示自己的图表，需将 TensorBoard 指向此工作的日志目录并运行，点击图表顶部窗格的标签页，然后在左上角的菜单中选择合适的运行。</p>
+<h2 id="名称域（Name-scoping）和节点（Node）"><a href="#名称域（Name-scoping）和节点（Node）" class="headerlink" title="名称域（Name scoping）和节点（Node）"></a>名称域（Name scoping）和节点（Node）</h2><p>典型的 TensorFlow 可以有数以千计的节点，为简单起见，我们为变量名划定范围，并且可视化把该信息用于在图表中的节点上定义一个层级。默认情况下， 只有顶层节点会显示。下面这个例子使用tf.name_scope在hidden命名域下定义了三个操作:</p>
+<div class="hljs"><pre><code class="hljs vim">import tensorflow <span class="hljs-keyword">as</span> <span class="hljs-keyword">tf</span>
+
+with <span class="hljs-keyword">tf</span>.name_scope(<span class="hljs-string">'hidden'</span>) <span class="hljs-keyword">as</span> scope:
+  <span class="hljs-keyword">a</span> = <span class="hljs-keyword">tf</span>.constant(<span class="hljs-number">5</span>, name=<span class="hljs-string">'alpha'</span>)
+  W = <span class="hljs-keyword">tf</span>.Variable(<span class="hljs-keyword">tf</span>.random_uniform([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], -<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>), name=<span class="hljs-string">'weights'</span>)
+  <span class="hljs-keyword">b</span> = <span class="hljs-keyword">tf</span>.Variable(<span class="hljs-keyword">tf</span>.zeros([<span class="hljs-number">1</span>]), name=<span class="hljs-string">'biases'</span>)</code></pre></div>
+<p> TensorFlow 图表有两种连接关系：数据依赖和控制依赖。数据依赖显示两个操作之间的tensor流程，用实心箭头指示，而控制依赖用点线表示。在已展开的视图(上面的右图)中，除了用点线连接的CheckNumerics和control_dependency之外，所有连接都是数据依赖的。</p>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Blog">
+  <meta name="author" content="Ai Zf">
+  <meta name="keywords" content="">
+  <title>Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener">
+                <i class="iconfont icon-github-fill"></i>
+                GitHub
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/tensorflow/%E5%8F%98%E9%87%8F_%E5%88%9B%E5%BB%BA%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E3%80%81%E4%BF%9D%E5%AD%98%E5%92%8C%E5%8A%A0%E8%BD%BD/">notes/tensorflow/变量_创建、初始化、保存和加载</a>
+
+      <a href="/2020/07/14/notes/tensorflow/%E5%8F%98%E9%87%8F_%E5%88%9B%E5%BB%BA%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E3%80%81%E4%BF%9D%E5%AD%98%E5%92%8C%E5%8A%A0%E8%BD%BD/" class="index-excerpt">
+        
+        
+          
+        
+        <div>变量:创建、初始化、保存和加载当训练模型时，用变量来存储和更新参数。变量包含张量 (Tensor)存放于内存的缓存区。建模时它们需要被明确地初始化，模型训练后它们必须被存储到磁盘。这些变量的值可在之后模型训练和分析时被加载。本文档描述以下两个TensorFlow类。
+
+tf.Variable 类
+tf.train.Saver 类
+
+创建当创建一个变量时，你将一个张量作为初始值传入构造函数Varia</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/tensorflow/TensorBoard_%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0/">notes/tensorflow/TensorBoard_可视化学习</a>
+
+      <a href="/2020/07/14/notes/tensorflow/TensorBoard_%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="index-excerpt">
+        
+        
+          
+        
+        <div>TensorBoard:可视化学习为了更方便 TensorFlow 程序的理解、调试与优化,可以用 TensorBoard 来展现你的 TensorFlow 图像，绘制图像生成的定量指标图以及附加数据。
+当 TensorBoard 设置完成后，它应该是这样子的：pass
+TensorBoard: 图表可视化为了显示自己的图表，需将 TensorBoard 指向此工作的日志目录并运行，点击图表顶部窗</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/python/%E6%8A%80%E5%B7%A7/">python的一些技巧</a>
+
+      <a href="/2020/07/14/notes/python/%E6%8A%80%E5%B7%A7/" class="index-excerpt">
+        
+        
+          
+        
+        <div>装饰器@staticmethod
+def A():
+    pass
+# 相当于
+A=staticmethod(A)
+
+@staticmethodstaticmethod 一般用于类内，返回函数的静态方法。该方法不强制要求传递参数
+@staticmethod
+def __exec(func):
+    def wrapper(self, *args, **kwargs):
+        sql </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/python/python2_3%E5%85%BC%E5%AE%B9/">python2和 3兼容</a>
+
+      <a href="/2020/07/14/notes/python/python2_3%E5%85%BC%E5%AE%B9/" class="index-excerpt">
+        
+        
+          
+        
+        <div># coding=utf-8
+from __future__ import absolute_import
+from __future__ import division     # division(精确除法)
+from __future__ import print_function   # print()
+</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/python/pandas/">python的pandas模块</a>
+
+      <a href="/2020/07/14/notes/python/pandas/" class="index-excerpt">
+        
+        
+          
+        
+        <div>ilocdf["col"].iloc[0]=122133
+# df变化
+df.iloc[0,6]=122133
+# df变化
+
+df.iloc[0]["col"]=122133
+# df不变化
+
+过滤not inhttps://stackoverflow.com/questions/27965295/dropping-rows-from-dataframe-based-on-a-not-in-co</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
+            
+              <a href="/tags/%E6%A8%A1%E5%9D%97/">模块</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/python/logging%E6%A8%A1%E5%9D%97(%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97)/">python的logging模块</a>
+
+      <a href="/2020/07/14/notes/python/logging%E6%A8%A1%E5%9D%97(%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97)/" class="index-excerpt">
+        
+        
+          
+        
+        <div>python的logging模块提供了标准的日志接口，可以通过它存储各种格式的日志，日志级别等级:critical &gt; error &gt; warning &gt; info &gt; debug
+
+默认情况下只显示了大于等于WARNING级别的日志。
+&gt;&gt;&gt; import logging
+&gt;&gt;&gt; logging.debug('test debug')
+</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
+            
+              <a href="/tags/%E6%A8%A1%E5%9D%97/">模块</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/python/Collections%E6%A8%A1%E5%9D%97(%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)/">python的Collections模块</a>
+
+      <a href="/2020/07/14/notes/python/Collections%E6%A8%A1%E5%9D%97(%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)/" class="index-excerpt">
+        
+        
+          
+        
+        <div>&gt;&gt;&gt; import collections
+
+
+Counter 类
+OrderedDict 类
+defaultdict 类
+namedtuple 类
+
+1、计数器（counter）counter是对字典的方法，用来追踪值的出现次数；具备字典的所有功能和自己的功能。
+&gt;&gt;&gt; c = Counter('abcdeabcdabcaba')  # count elem</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
+            
+              <a href="/tags/%E6%A8%A1%E5%9D%97/">模块</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/python/argparse%E6%A8%A1%E5%9D%97(%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7)/">argparse模块(命令行工具)</a>
+
+      <a href="/2020/07/14/notes/python/argparse%E6%A8%A1%E5%9D%97(%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7)/" class="index-excerpt">
+        
+        
+          
+        
+        <div>1 定义argparse是python标准库里面用来处理命令行参数的库
+2命令行参数分为位置参数和选项参数：
+
+位置参数就是程序根据该参数出现的位置来确定的,如：ls root/    ,其中root/是位置参数
+选项参数是应用程序已经提前定义好的参数，不是随意指定的,如：ls -l , -l 就是ls命令里的一个选项参数
+
+3 使用步骤(1)import argparse    首先导入模块
+
+</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
+            
+              <a href="/tags/%E6%A8%A1%E5%9D%97/">模块</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/nginx/%E5%91%BD%E4%BB%A4/">nginx基本指令</a>
+
+      <a href="/2020/07/14/notes/nginx/%E5%91%BD%E4%BB%A4/" class="index-excerpt">
+        
+        
+          
+        
+        <div>
+验证配置是否正确: nginx -t *.conf
+查看Nginx的版本号：nginx -V
+启动Nginx：nginx
+快速停止或关闭Nginx：nginx -s stop
+正常停止或关闭Nginx：nginx -s quit
+配置文件修改重装载命令：nginx -s reload
+指定配置文件：nginx -c *.conf
+
+</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/nginx/">nginx</a>
+            
+              <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/linux/%E8%A7%A3%E5%8E%8B%E7%BC%A9/">linux各种解压缩</a>
+
+      <a href="/2020/07/14/notes/linux/%E8%A7%A3%E5%8E%8B%E7%BC%A9/" class="index-excerpt">
+        
+        
+          
+        
+        <div>zip压缩一个目录：
+zip -r aaa.zip bbb
+解压一个zip文档：
+unzip aaa.zip
+zip分卷
+cat linux.zip* &gt; linux.zip #合并为一个zip包
+unzip linux.zip #解压zip包
+
+tar好处是它只消耗非常少的CPU以及时间去打包文件，仅仅只是一个打包工具，并不负责压缩。
+打包一个目录：
+tar -cvf aaa.tar bb</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">linux</a>
+            
+              <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/12/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/14/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Aizf's Blog.&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

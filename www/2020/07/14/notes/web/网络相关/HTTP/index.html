@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Blog">
+  <meta name="author" content="Ai Zf">
+  <meta name="keywords" content="">
+  <title>http和https - Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener">
+                <i class="iconfont icon-github-fill"></i>
+                GitHub
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      51
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/112010468?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=760863794850197504" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/112010468?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=760863794850197504</a></p>
+</blockquote>
+<ul>
+<li>HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。</li>
+<li>HTTP 协议是一个双向协议。</li>
+<li>HTTP 传输的内容是「超文本」。HTML 就是最常见的超文本了</li>
+</ul>
+<p>HTTP 是一个在计算机世界里专门在「两点」之间「传输」文字、图片、音频、视频等「超文本」数据的「约定和规范」。</p>
+<p>请求报文：请求行、请求头部、空行和请求数据</p>
+<p>响应报文：状态行、消息报头、空行和响应正文</p>
+<h2 id="1-状态码"><a href="#1-状态码" class="headerlink" title="1 状态码"></a>1 状态码</h2><h3 id="1-1-1xx"><a href="#1-1-1xx" class="headerlink" title="1.1 1xx"></a>1.1 1xx</h3><p>1xx 类状态码属于提示信息，是协议处理中的一种中间状态，实际用到的比较少。</p>
+<ul>
+<li>101 Switching Protocols。在HTTP升级为WebSocket的时候，如果服务器同意变更，就会发送状态码 101。</li>
+</ul>
+<h3 id="1-2-2xx"><a href="#1-2-2xx" class="headerlink" title="1.2 2xx"></a>1.2 2xx</h3><p>2xx 类状态码表示服务器成功处理了客户端的请求，也是我们最愿意看到的状态。</p>
+<ul>
+<li>「200 OK」是最常见的成功状态码，<strong>表示一切正常</strong>。如果是非 HEAD 请求，服务器返回的响应头都会有 body 数据，强缓存。</li>
+<li>「204 No Content」也是常见的成功状态码，与 200 OK 基本相同，<strong>但响应头没有 body 数据</strong>。</li>
+<li>「206 Partial Content」是应用于 HTTP <strong>分块下载或断点续传</strong>，表示响应返回的 body 数据并不是资源的全部，而是其中的一部分，也是服务器处理成功的状态。</li>
+</ul>
+<h3 id="1-3-3xx"><a href="#1-3-3xx" class="headerlink" title="1.3 3xx"></a>1.3 3xx</h3><p>3xx 类状态码表示客户端请求的资源发送了变动，需要客户端用新的 URL 重新发送请求获取资源，也就是<strong>重定向</strong>。</p>
+<ul>
+<li>「301 Moved Permanently」表示<strong>永久重定向</strong>，说明请求的资源已经不存在了，需改用新的 URL 再次访问。</li>
+<li>「302 Moved Permanently」表示<strong>临时重定向</strong>，说明请求的资源还在，但暂时需要用另一个 URL 来访问。<br>301 和 302 都会在响应头里使用字段 Location，指明后续要跳转的 URL，浏览器会自动重定向新的 URL。</li>
+<li>「304 Not Modified」当<strong>协商缓存</strong>命中时会返回这个状态码。<strong>重定向已存在的缓冲文件，也称缓存重定向，用于缓存控制</strong>。</li>
+</ul>
+<h4 id="1-3-1-304"><a href="#1-3-1-304" class="headerlink" title="1.3.1 304"></a>1.3.1 304</h4><p>TODO</p>
+<h3 id="1-4-4xx"><a href="#1-4-4xx" class="headerlink" title="1.4 4xx"></a>1.4 4xx</h3><p>4xx 类状态码表示<strong>客户端发送的报文有误</strong>，服务器无法处理，也就是错误码的含义。</p>
+<ul>
+<li>「400 Bad Request」表示客户端请求的报文有错误，但只是个<strong>笼统的错误</strong>。</li>
+<li>「403 Forbidden」表示服务器<strong>禁止访问</strong>资源，并不是客户端的请求出错。</li>
+<li>「404 Not Found」表示请求的资源在服务器上<strong>不存在</strong>或未找到，所以无法提供给客户端。</li>
+<li>405 Method Not Allowed: 请求方法不被服务器端允许。</li>
+</ul>
+<h3 id="1-5-5xx"><a href="#1-5-5xx" class="headerlink" title="1.5 5xx"></a>1.5 5xx</h3><p>5xx 类状态码表示客户端请求报文正确，但是<strong>服务器</strong>处理时<strong>内部发生了错误</strong>，属于服务器端的错误码。</p>
+<ul>
+<li>「500 Internal Server Error」与 400 类型，是个<strong>笼统</strong>通用的错误码，服务器发生了什么错误，我们并不知道。</li>
+<li>「501 Not Implemented」表示客户端请求的功能<strong>还不支持</strong>，类似“即将开业，敬请期待”的意思。</li>
+<li>「502 Bad Gateway」通常是服务器作为网关或代理时返回的错误码，表示服务器<strong>自身工作正常，访问后端服务器发生了错误</strong>。</li>
+<li>「503 Service Unavailable」表示<strong>服务器当前很忙</strong>，暂时无法响应服务器，类似“网络服务正忙，请稍后重试”的意思。</li>
+</ul>
+<h2 id="2-http-常见字段"><a href="#2-http-常见字段" class="headerlink" title="2 http 常见字段"></a>2 http 常见字段</h2><h3 id="2-1-Host"><a href="#2-1-Host" class="headerlink" title="2.1 Host"></a>2.1 Host</h3><p>指定服务器的域名</p>
+<h3 id="2-2-Content-Length"><a href="#2-2-Content-Length" class="headerlink" title="2.2 Content-Length"></a>2.2 Content-Length</h3><p>服务器在返回数据时，会有 Content-Length 字段，表明<strong>本次</strong>回应的数据长度。</p>
+<h3 id="2-3-Connection"><a href="#2-3-Connection" class="headerlink" title="2.3 Connection"></a>2.3 Connection</h3><p>最常用于客户端要求服务器使用 TCP 持久连接，以便其他请求复用。</p>
+<p>HTTP/1.1 版本的默认连接都是持久连接，但为了兼容老版本的 HTTP，需要指定 Connection 首部字段的值为 Keep-Alive。</p>
+<p><code>Connection: keep-alive</code></p>
+<p>一个可以复用的 TCP 连接就建立了，直到客户端或服务器主动关闭连接。但是，这不是标准字段。</p>
+<h3 id="2-4-Content-Type"><a href="#2-4-Content-Type" class="headerlink" title="2.4 Content-Type"></a>2.4 Content-Type</h3><p>用于服务器回应时，告诉客户端，本次数据是什么格式。</p>
+<p>客户端请求的时候，可以使用 Accept 字段声明自己可以接受哪些数据格式。</p>
+<p><code>Accept-Charset: charset=utf-8</code></p>
+<p><code>Accept: */*</code></p>
+<p><code>Content-Type: text/html; charset=utf-8</code></p>
+<blockquote>
+<p>上面的类型表明，发送的是网页，而且编码是UTF-8。</p>
+</blockquote>
+<p>取值可以分为下面几类:</p>
+<ul>
+<li>text：text/html, text/plain, text/css 等</li>
+<li>image: image/gif, image/jpeg, image/png 等</li>
+<li>audio/video: audio/mpeg, video/mp4 等</li>
+<li>application: application/json, application/javascript, application/pdf, application/- octet-stream</li>
+</ul>
+<h3 id="2-5-Content-Encoding"><a href="#2-5-Content-Encoding" class="headerlink" title="2.5 Content-Encoding"></a>2.5 Content-Encoding</h3><p>说明数据的压缩方法。表示服务器返回的数据使用了什么压缩格式</p>
+<p><code>Accept-Encoding: gzip, deflate</code></p>
+<blockquote>
+<p>客户端在请求时，用 Accept-Encoding 字段说明自己可以接受哪些压缩方法。</p>
+</blockquote>
+<p><code>Content-Encoding: gzip</code></p>
+<blockquote>
+<p>表示服务器返回的数据采用了 gzip 方式压缩，告知客户端需要用此方式解压。</p>
+</blockquote>
+<h3 id="2-6-Content-Language"><a href="#2-6-Content-Language" class="headerlink" title="2.6 Content-Language"></a>2.6 Content-Language</h3><p>指定支持的语言</p>
+<h3 id="2-7-如何处理大文件的传输"><a href="#2-7-如何处理大文件的传输" class="headerlink" title="2.7 如何处理大文件的传输"></a>2.7 如何处理大文件的传输</h3><p>HTTP 针对这一场景，采取了范围请求的解决方案，允许客户端仅仅请求一个资源的一部分。</p>
+<p>前提是服务器要支持范围请求,必须加上这样一个响应头:</p>
+<p><code>Accept-Ranges: none</code></p>
+<h2 id="3-GET-与-POST"><a href="#3-GET-与-POST" class="headerlink" title="3 GET 与 POST"></a>3 GET 与 POST</h2><p><a href="https://www.zhihu.com/question/28586791" target="_blank" rel="noopener">https://www.zhihu.com/question/28586791</a></p>
+<p>本质都是tcp/ip</p>
+<p>Get 方法的含义是请求从服务器<strong>获取</strong>资源，这个资源可以是静态的文本、页面、图片视频等。</p>
+<p>POST 方法，它向 URI 指定的资源<strong>提交</strong>数据，数据就放在报文的 body 里。</p>
+<h3 id="3-1-安全和幂等"><a href="#3-1-安全和幂等" class="headerlink" title="3.1 安全和幂等"></a>3.1 安全和幂等</h3><ul>
+<li>在 HTTP 协议里，所谓的「安全」是指请求方法不会「破坏」服务器上的资源。</li>
+<li>所谓的「幂等」，意思是多次执行相同的操作，结果都是「相同」的。</li>
+</ul>
+<h3 id="3-2-对比"><a href="#3-2-对比" class="headerlink" title="3.2 对比"></a>3.2 对比</h3><h4 id="3-2-1-幂等"><a href="#3-2-1-幂等" class="headerlink" title="3.2.1 幂等"></a>3.2.1 幂等</h4><ul>
+<li><code>GET</code> 方法就是安全且幂等的,<strong>因此可以对GET请求的数据做缓存</strong>，浏览器，代理（如nginx），或者server端</li>
+<li><code>POST</code> 因为是「新增或提交数据」的操作，会修改服务器上的资源，所以是不安全的，且多次提交数据就会创建多个资源，所以不是幂等的。<ul>
+<li>不能随意多次执行。因此也就不能缓存。</li>
+<li>POST可能有副作用，所以浏览器实现为不能把POST请求保存为书签。</li>
+<li>如果尝试重新执行POST请求，浏览器也会弹一个框提示下这个刷新可能会有副作用</li>
+<li>把没有副作用的请求用POST实现，浏览器该弹框还是会弹框，对用户体验好处改善不大。</li>
+<li>将HTTP POST作为接口的形式使用时，就没有这种弹框了。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-2-携带数据的格式"><a href="#3-2-2-携带数据的格式" class="headerlink" title="3.2.2 携带数据的格式"></a>3.2.2 携带数据的格式</h4><ul>
+<li>GET请求没有body，只有url，请求数据放在url的querystring中；</li>
+<li>POST请求的数据在body中<ul>
+<li>POST请求都来自表单提交。每次提交，表单的数据被浏览器用编码到HTTP请求的body里。浏览器发出的POST请求的body主要有有两种格式，一种是application/x-www-form-urlencoded用来传输简单的数据，大概就是”key1=value1&amp;key2=value2”这样的格式。另外一种是传文件，会采用multipart/form-data格式。采用后者是因为application/x-www-form-urlencoded的编码方式对于文件这种二进制的数据非常低效。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-接口中的GET和POST"><a href="#3-3-接口中的GET和POST" class="headerlink" title="3.3 接口中的GET和POST"></a>3.3 接口中的GET和POST</h3><p>指通过浏览器的Ajax api，此时GET/POST不光能用在前端和后端的交互中，还能用在后端各个子服务的调用中</p>
+<p>TODO</p>
+<h3 id="3-4-关于安全性"><a href="#3-4-关于安全性" class="headerlink" title="3.4 关于安全性"></a>3.4 关于安全性</h3><p>从攻击的角度，无论是GET还是POST<strong>都不够安全</strong>，因为HTTP本身是<strong>明文协议</strong></p>
+<p>https</p>
+<p>一般情况下，私密数据传输用POST + body就好。</p>
+<h3 id="3-5-关于编码"><a href="#3-5-关于编码" class="headerlink" title="3.5 关于编码"></a>3.5 关于编码</h3><p>GET只支持URL编码</p>
+<h3 id="TCP-IP层面"><a href="#TCP-IP层面" class="headerlink" title="TCP/IP层面"></a>TCP/IP层面</h3><p><code>get</code>请求时，浏览器会把headers和data一起发送出去，服务器响应200（返回数据），<br><code>post</code>请求时，浏览器先发送headers，服务器响应100 continue，浏览器再发送data，服务器响应200（返回数据）。</p>
+<h2 id="4-HTTP-特性"><a href="#4-HTTP-特性" class="headerlink" title="4 HTTP 特性"></a>4 HTTP 特性</h2><p>HTTP 最凸出的<strong>优点</strong>是「简单、灵活和易于扩展、应用广泛和跨平台」。</p>
+<ol>
+<li><p><strong>简单</strong> HTTP 基本的报文格式就是 header + body，头部信息也是 key-value 简单文本的形式，易于理解。</p>
+</li>
+<li><p><strong>灵活和易于扩展</strong></p>
+<ul>
+<li>HTTP协议里的各类请求方法、URI/URL、状态码、头字段等每个组成要求都没有被固定死，都允许开发人员自定义和扩充。</li>
+<li>同时 HTTP 由于是工作在应用层（ OSI 第七层），则它下层可以随意变化。</li>
+<li>HTTPS 也就是在 HTTP 与 TCP 层之间增加了 SSL/TLS 安全传输层，HTTP/3 甚至把 TCP 层换成了基于 UDP 的 QUIC。</li>
+</ul>
+</li>
+<li><p><strong>应用广泛和跨平台</strong></p>
+</li>
+</ol>
+<p>缺点:</p>
+<ol>
+<li>无状态双刃剑<ol>
+<li>减轻服务器的负担</li>
+<li>在完成有关联性的操作时会非常麻烦(Cookie)</li>
+</ol>
+</li>
+<li>明文传输</li>
+<li>不安全(明文传输,不验证通信方的身份,无法证明报文的完整性)。HTTP 的安全问题，可以用 HTTPS 的方式解决</li>
+</ol>
+<h2 id="5-性能"><a href="#5-性能" class="headerlink" title="5 性能"></a>5 性能</h2><p>HTTP 协议是基于 TCP/IP，并且使用了「请求 - 应答」的通信模式，所以性能的关键就在这两点里。</p>
+<h3 id="5-1-长连接"><a href="#5-1-长连接" class="headerlink" title="5.1 长连接"></a>5.1 长连接</h3><p>早期 HTTP/1.0 性能上的一个很大的问题，那就是每发起一个请求，都要新建一次 TCP 连接（三次握手），而且是串行请求</p>
+<p>为了解决上述 TCP 连接问题，HTTP/1.1 提出了长连接的通信方式，也叫持久连接。这种方式的好处在于减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。</p>
+<p>持久连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。</p>
+<h3 id="5-2-管道网络传输"><a href="#5-2-管道网络传输" class="headerlink" title="5.2 管道网络传输"></a>5.2 管道网络传输</h3><p>HTTP/1.1 采用了长连接的方式，这使得管道（pipeline）网络传输成为了可能。</p>
+<p>即可在同一个 TCP 连接里面，客户端可以发起多个请求，只要第一个请求发出去了，<strong>不必等其回来，就可以发第二个请求出去</strong>，可以减少整体的响应时间。</p>
+<p><strong>但是服务器还是按照顺序</strong>，先回应 A 请求，完成后再回应 B 请求。要是 前面的回应特别慢，后面就会有许多请求排队等着。这称为「<strong>队头堵塞</strong>」。</p>
+<h3 id="5-3-队头阻塞"><a href="#5-3-队头阻塞" class="headerlink" title="5.3 队头阻塞"></a>5.3 队头阻塞</h3><p>「请求 - 应答」的模式加剧了 HTTP 的性能问题。<br>因为当顺序发送的请求序列中的一个请求因为某种原因被阻塞时，在后面排队的所有请求也一同被阻塞了</p>
+<h3 id="5-4-并发连接"><a href="#5-4-并发连接" class="headerlink" title="5.4 并发连接"></a>5.4 并发连接</h3><p>对于一个域名允许分配多个长连接，在RFC2616规定过客户端最多并发 2 个连接，不过事实上在现在的浏览器标准中，这个上限要多很多，Chrome 中是 6 个。</p>
+<p>还是不能满足人们对性能的需求于是进行<strong>域名划分</strong></p>
+<p>一个一级域名下可以分出非常多的二级域名，而它们都指向同样的一台服务器，能够并发的长连接数更多了，事实上也更好地解决了队头阻塞的问题。</p>
+<h2 id="6-HTTP-与-HTTPS"><a href="#6-HTTP-与-HTTPS" class="headerlink" title="6 HTTP 与 HTTPS"></a>6 HTTP 与 HTTPS</h2><p>HTTPS 解决 HTTP 不安全的缺陷，在 TCP 和 HTTP 网络层之间加入了 SSL/TLS 安全协议，使得报文能够加密传输。</p>
+<p>HTTP 连接建立相对简单， TCP 三次握手之后便可进行 HTTP 的报文传输。<strong>而 HTTPS 在 TCP 三次握手之后，还需进行 SSL/TLS 的握手过程</strong>，才可进入加密报文传输。</p>
+<p>HTTP 的端口号是 80，HTTPS 的端口号是 443</p>
+<p>HTTPS 协议需要向 CA（证书权威机构）申请数字证书(证明密钥是他的密钥)，来保证服务器的身份是可信的。</p>
+<p>HTTP 由于是明文传输，所以安全上存在以下三个风险：</p>
+<ul>
+<li>窃听风险，比如通信链路上可以获取通信内容。</li>
+<li>篡改风险，比如强制入垃圾广告，视觉污染。</li>
+<li>冒充风险，比如冒充淘宝网站。</li>
+</ul>
+<p>HTTPS可以很好的解决了上述的风险：</p>
+<ul>
+<li>信息加密(<strong>混合加密</strong>)：交互信息无法被窃取。</li>
+<li>校验机制(<strong>摘要算法来实现完整性</strong>)：无法篡改通信内容，篡改了就不能正常显示。</li>
+<li>身份证书(<strong>公钥放入到数字证书</strong>)：证明淘宝是真的淘宝网。</li>
+</ul>
+<h3 id="6-1-混合加密"><a href="#6-1-混合加密" class="headerlink" title="6.1 混合加密"></a>6.1 混合加密</h3><p>对称加密和非对称加密结合</p>
+<ul>
+<li>在通信建立前采用非对称加密的方式交换「会话秘钥」，后续就不再使用非对称加密。(速度慢)</li>
+<li>在通信过程中全部使用对称加密的「会话秘钥」的方式加密明文数据。(运算速度快)</li>
+</ul>
+<h3 id="6-2-摘要算法"><a href="#6-2-摘要算法" class="headerlink" title="6.2 摘要算法"></a>6.2 摘要算法</h3><p>摘要算法用来实现完整性，能够为数据生成独一无二的「指纹」，用于校验数据的完整性，解决了篡改的风险。</p>
+<p>客户端在发送明文之前会通过摘要算法算出明文的「指纹」，发送的时候把<strong>「指纹 + 明文」一同<br>加密</strong>成密文后，发送给服务器，服务器解密后，用相同的摘要算法算出发送过来的明文,然后比对指纹</p>
+<h3 id="6-3-数字证书"><a href="#6-3-数字证书" class="headerlink" title="6.3 数字证书"></a>6.3 数字证书</h3><p>客户端先向服务器端索要公钥，然后用公钥加密信息，服务器收到密文后，用自己的私钥解密。</p>
+<p>为保证公钥不被篡改，需要借助第三方权威机构 CA，将服务器公钥放在数字证书，只要证书是可信的，公钥就是可信的。</p>
+<h3 id="6-4-HTTPS-是如何建立连接的？其间交互了什么？"><a href="#6-4-HTTPS-是如何建立连接的？其间交互了什么？" class="headerlink" title="6.4 HTTPS 是如何建立连接的？其间交互了什么？"></a>6.4 HTTPS 是如何建立连接的？其间交互了什么？</h3><p>SSL/TLS 协议基本流程：</p>
+<ul>
+<li>客户端向服务器索要并验证服务器的公钥。(握手)</li>
+<li>双方协商生产「会话秘钥」。(握手)</li>
+<li>双方采用「会话秘钥」进行加密通信。</li>
+</ul>
+<p>握手过程：</p>
+<ol>
+<li>ClientHello,发送以下内容<ol>
+<li>支持的 SSL/TLS 协议版本</li>
+<li>生产的随机数（Client Random），后面用于生产「会话秘钥」</li>
+<li>客户端支持的密码套件列表，如 RSA 加密算法</li>
+</ol>
+</li>
+<li>SeverHello，回应内容如下<ol>
+<li>确认 SSL/ TLS 协议版本</li>
+<li>服务器生产的随机数，后面用于生产「会话秘钥」</li>
+<li>确认的密码套件列表，如 RSA 加密算法</li>
+<li>服务器的数字证书</li>
+</ol>
+</li>
+<li>客户端回应<ol>
+<li>首先通过浏览器或者操作系统中的 CA 公钥，确认服务器的数字证书的真实性。</li>
+<li>取出服务器的公钥，然后使用它加密报文，向服务器发送如下信息<ol>
+<li>一个随机数（pre-master key）。该随机数会被服务器公钥加密。</li>
+<li>加密通信算法改变通知，表示随后的信息都将用「会话秘钥」加密通信。</li>
+<li>客户端握手结束通知，表示客户端的握手阶段已经结束。</li>
+<li>这样服务器和客户端就同时有三个随机数，各自生成本次通信的「会话秘钥」。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>服务器的最后回应<ol>
+<li>收到客户端的第三个随机数后，通过协商的加密算法，计算出本次通信的「会话秘钥」。</li>
+<li>然后，向客户端发生最后的信息：<ol>
+<li>加密通信算法改变通知，表示随后的信息都将用「会话秘钥」加密通信。</li>
+<li>服务器握手结束通知，表示服务器的握手阶段已经结束。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="7-HTTP-1-1、HTTP-2、HTTP-3-演变"><a href="#7-HTTP-1-1、HTTP-2、HTTP-3-演变" class="headerlink" title="7 HTTP/1.1、HTTP/2、HTTP/3 演变"></a>7 HTTP/1.1、HTTP/2、HTTP/3 演变</h2><h3 id="7-1-HTTP-1-1-相比-HTTP-1-0"><a href="#7-1-HTTP-1-1-相比-HTTP-1-0" class="headerlink" title="7.1 HTTP/1.1 相比 HTTP/1.0"></a>7.1 HTTP/1.1 相比 HTTP/1.0</h3><ul>
+<li><p>使用 TCP 长连接</p>
+</li>
+<li><p>支持 管道（pipeline）网络传输，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去</p>
+</li>
+<li><p>队头阻塞</p>
+</li>
+</ul>
+<h3 id="7-2-HTTP-2相比HTTP-1-1"><a href="#7-2-HTTP-2相比HTTP-1-1" class="headerlink" title="7.2 HTTP/2相比HTTP/1.1"></a>7.2 HTTP/2相比HTTP/1.1</h3><p>HTTP/2 协议是基于 HTTPS 的，所以 HTTP/2 的安全性也是有保障的。</p>
+<p>改进：</p>
+<ol>
+<li>头部压缩<ul>
+<li>如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的分。</li>
+</ul>
+</li>
+<li>二进制格式<ul>
+<li>HTTP/2 不再像 HTTP/1.1 里的纯文本形式的报文，而是全面采用了二进制格式。</li>
+<li>头信息和数据体都是二进制，并且统称为帧（frame）：头信息帧和数据帧。</li>
+<li>二进制格式增加了数据传输的效率</li>
+</ul>
+</li>
+<li>数据流<ul>
+<li>HTTP/2 的数据包不是按顺序发送的。因此，必须要对数据包做标记，指出它属于哪个回应。</li>
+<li>每个请求或回应的所有数据包，称为一个数据流（Stream）。</li>
+<li>每个数据流都标记着一个独一无二的编号，其中规定<strong>客户端</strong>发出的数据流编号为<strong>奇数</strong>， <strong>服务器</strong>发出的数据流编号为<strong>偶数</strong></li>
+<li>客户端还可以指定数据流的优先级。优先级高的请求，服务器就先响应该请求。</li>
+</ul>
+</li>
+<li>多路复用<ul>
+<li>HTTP/2 是可以在一个连接中并发多个请求或回应，而不用按照顺序一一对应。</li>
+<li>解决队头阻塞，降低了延迟，大幅度提高了连接的利用率。</li>
+</ul>
+</li>
+<li>服务器推送<ul>
+<li>在一定程度上改善了传统的「请求 - 应答」工作模式，服务不再是被动地响应，也可以主动向客户端发送消息。</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-2-HTTP-3相比HTTP-2"><a href="#7-2-HTTP-3相比HTTP-2" class="headerlink" title="7.2 HTTP/3相比HTTP/2"></a>7.2 HTTP/3相比HTTP/2</h3><p><strong>HTTP/2 主要的问题在于</strong>：</p>
+<p>多个 HTTP 请求在<strong>复用一个 TCP 连接</strong>，下层的 TCP 协议是不知道有多少个 HTTP 请求的。</p>
+<p>所以一旦发生了丢包现象，就会触发 TCP 的重传机制，这样在一个 TCP 连接中的所有的 HTTP 请求都必须等待这个丢了的包被重传回来。（丢包，就会阻塞所有的 HTTP 请求）</p>
+<p>这都是基于 TCP 传输层的问题，所以 <strong>HTTP/3 把 HTTP 下层的 TCP 协议改成了 UDP</strong>！</p>
+<ul>
+<li>UDP 发生是不管顺序，也不管丢包的，所以不会出现 HTTP/1.1 的队头阻塞 和 HTTP/2 的一个丢包全部重传问题。</li>
+<li>UDP 是不可靠传输的，但基于 UDP 的 <code>QUIC 协议</code> 可以实现类似 TCP 的可靠性传输。</li>
+<li>HTTPS 要建立一个连接，要花费 6 次交互，先是建立三次握手，然后是 TLS/1.3 的三次握手。</li>
+<li>QUIC 直接把以往的 TCP 和 TLS/1.3 的 6 次交互合并成了 3 次，减少了交互次数。</li>
+</ul>
+<h3 id="7-3-图解"><a href="#7-3-图解" class="headerlink" title="7.3 图解"></a>7.3 图解</h3><p><img src="http://qdgd8wb46.bkt.clouddn.com/md/1.jpg" srcset="/img/loading.gif" alt="avatar"></p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/http/">http</a>
+                    
+                      <a class="hover-with-bg" href="/tags/https/">https</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/UDP%E5%92%8CTCP/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">UDP和TCP</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/14/notes/web/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/fetch/">
+                        <span class="hidden-mobile">fetch</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "http和https&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
