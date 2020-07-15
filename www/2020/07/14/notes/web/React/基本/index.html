@@ -333,7 +333,7 @@ ele = data.map(<span class="hljs-function">(<span class="hljs-params">d,i</span>
 <li>挂载卸载</li>
 <li>更新</li>
 </ul>
-<p><img src="http://qdgd8wb46.bkt.clouddn.com/md/react_1.webp" srcset="/img/loading.gif" alt="avatar"></p>
+<p><img src="http://qdgd8wb46.bkt.clouddn.com/md/react_1.webp" alt="avatar"></p>
 <h3 id="8-1-挂载卸载"><a href="#8-1-挂载卸载" class="headerlink" title="8.1 挂载卸载"></a>8.1 挂载卸载</h3><p><code>constructor()</code></p>
 <blockquote>
 <p>完成了React数据的初始化，它接受两个参数：props和context，当想在函数内部使用这两个参数时，需使用super()传入这两个参数。</p>
@@ -376,7 +376,7 @@ ele = data.map(<span class="hljs-function">(<span class="hljs-params">d,i</span>
 <blockquote>
 <p>render函数会插入jsx生成的dom结构，react会生成一份虚拟dom树，在每一次组件更新时，在此react会通过其diff算法比较更新前后的新旧DOM树，比较以后，找到最小的有差异的DOM节点，并重新渲染。</p>
 </blockquote>
-<h3 id="8-3-新增"><a href="#8-3-新增" class="headerlink" title="8.3 新增"></a>8.3 新增</h3><p><img src="http://qdgd8wb46.bkt.clouddn.com/md/react_2.webp" srcset="/img/loading.gif" alt="avatar"></p>
+<h3 id="8-3-新增"><a href="#8-3-新增" class="headerlink" title="8.3 新增"></a>8.3 新增</h3><p><img src="http://qdgd8wb46.bkt.clouddn.com/md/react_2.webp" alt="avatar"></p>
 <h3 id="8-4-State-的更新"><a href="#8-4-State-的更新" class="headerlink" title="8.4 State 的更新"></a>8.4 State 的更新</h3><h4 id="8-4-1-不要直接修改-State"><a href="#8-4-1-不要直接修改-State" class="headerlink" title="8.4.1 不要直接修改 State"></a>8.4.1 不要直接修改 State</h4><p>应该使用 setState():</p>
 <p><code>this.setState({comment: &#39;Hello&#39;});</code></p>
 <h4 id="8-4-2-State-的更新可能是异步的"><a href="#8-4-2-State-的更新可能是异步的" class="headerlink" title="8.4.2 State 的更新可能是异步的"></a>8.4.2 State 的更新可能是异步的</h4><p>出于性能考虑，React 可能会把多个 setState() 调用合并成一个调用。</p>
