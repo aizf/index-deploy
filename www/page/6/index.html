@@ -170,6 +170,48 @@
     
     
     <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/web/js/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/">js变量提升机制</a>
+
+      <a href="/2020/07/14/notes/web/js/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/" class="index-excerpt">
+        
+        
+          
+        
+        <div>var function在当前作用于会变量提升:
+
+var会先声明
+function会同时声明和定义
+
+例题console.log(a); // undefined
+var a = 1;
+
+console.log(a); // ReferenceError: a is not defined
+
+var B = 1;
+function B() &#123;
+&#125;
+console.log(B)</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/js/">js</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
       <a class="index-header" href="/2020/07/14/notes/web/js/%E5%8F%98%E9%87%8F%E5%B8%A6%E4%B8%8D%E5%B8%A6var/">变量带不带var</a>
 
       <a href="/2020/07/14/notes/web/js/%E5%8F%98%E9%87%8F%E5%B8%A6%E4%B8%8D%E5%B8%A6var/" class="index-excerpt">
@@ -508,43 +550,6 @@ console.log(a &gt; 5)  // true
 console.log(a &lt; 5)  // false
 console.log(a == 1) // true
 co</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/js/">js</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/14/notes/web/js/Proxy/">Proxy</a>
-
-      <a href="/2020/07/14/notes/web/js/Proxy/" class="index-excerpt">
-        
-        
-          
-        
-        <div>https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
-语法const p = new Proxy(target, handler)
-target
-
-包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。
-
-handler
-
-包装的目标对象（可以是任何类型的对</div>
       </a>
 
       <div class="index-btm post-metas">

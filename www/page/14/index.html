@@ -170,87 +170,6 @@
     
     
     <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/14/notes/linux/%E4%B8%80%E8%88%AC%E6%8C%87%E4%BB%A4/">linux一些指令</a>
-
-      <a href="/2020/07/14/notes/linux/%E4%B8%80%E8%88%AC%E6%8C%87%E4%BB%A4/" class="index-excerpt">
-        
-        
-          
-        
-        <div>一些变量$(realpath bert)
-返回当前bert的绝对路经
-
-$USER
-返回当前用户名
-链接软连接ln创建软链接
-ln –s  /var/www/test  test
-# 当前路径创建test 引向/var/www/test 文件夹
-
-删除软链接
-rm –rf 软链接名称(请注意不要在后面加”/”!!!)
-修改软链接
-ln –snf  [新的源文件或目录]  [目标文件或目录]
-常用的</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/linux/">linux</a>
-            
-              <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/07/14/notes/git/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA/">git工作区，暂存区和版本库</a>
-
-      <a href="/2020/07/14/notes/git/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA/" class="index-excerpt">
-        
-        
-          
-        
-        <div>工作区（Working Directory）看到的目录
-版本库（Repository）隐藏目录.git，这个不算工作区，而是Git的版本库。
-版本库包括暂存区（stage或者index），分支，指针HEAD
-文件往Git版本库里添加,分两步:
-
-git add把文件添加进去，实际上就是把文件修改添加到暂存区
-git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支
-
-</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/git/">git</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
       <a class="index-header" href="/2020/07/14/notes/git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">git分支管理</a>
 
       <a href="/2020/07/14/notes/git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" class="index-excerpt">
@@ -555,6 +474,77 @@ ps       </div>
               <a href="/tags/docker/">docker</a>
             
               <a href="/tags/cheatsheet/">cheatsheet</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/docker/dockerTools%E7%9A%84%E5%9D%91/">dockerTools的坑</a>
+
+      <a href="/2020/07/14/notes/docker/dockerTools%E7%9A%84%E5%9D%91/" class="index-excerpt">
+        
+        
+          
+        
+        <div>目录挂载(-v)window中，docker会将c:...中的:误读，应根据共享文件夹，写成/c/
+端口映射(-p)端口会映射到打开Docker Quickstart Terminal时显示的IP地址，即docker虚拟机的IP，而不是localhost
+示例启动
+docker run  --name localserver --rm -v /c/Users/air/Documents/GitHu</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/docker/">docker</a>
+            
+              <a href="/tags/%E5%9D%91/">坑</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a class="index-header" href="/2020/07/14/notes/docker/Docker%20%E5%AE%B9%E5%99%A8%E8%BF%9E%E6%8E%A5/">Docker 容器连接</a>
+
+      <a href="/2020/07/14/notes/docker/Docker%20%E5%AE%B9%E5%99%A8%E8%BF%9E%E6%8E%A5/" class="index-excerpt">
+        
+        
+          
+        
+        <div>Docker 容器连接前面我们实现了通过网络端口来访问运行在 docker 容器内的服务。下面我们来实现通过端口连接到一个 docker 容器
+网络端口映射-p
+-P
+Docker容器连接端口映射并不是唯一把 docker 连接到另一个容器的方法。
+docker 有一个连接系统允许将多个容器连接在一起，共享连接信息。
+docker 连接会创建一个父子关系，其中父容器可以看到子容器的信息。
+容器命名</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/docker/">docker</a>
+            
+              <a href="/tags/%E5%AE%B9%E5%99%A8%E8%BF%9E%E6%8E%A5/">容器连接</a>
             
           </div>
         

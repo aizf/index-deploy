@@ -19,7 +19,7 @@
   <meta name="description" content="Blog">
   <meta name="author" content="Ai Zf">
   <meta name="keywords" content="">
-  <title>链接不添加协议 - Blog</title>
+  <title>HTTPS页面发送HTTP请求 - Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -158,7 +158,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      114 字
+      485 字
     </span>
   
 
@@ -168,7 +168,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      5
        分钟
     </span>
   
@@ -199,11 +199,26 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p><a href="https://my.oschina.net/u/205403/blog/151919" target="_blank" rel="noopener">https://my.oschina.net/u/205403/blog/151919</a></p>
-<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//www.ludou.org/logo.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span></code></pre></div>
-
-<p>以上不写协议的方式，浏览器照样可以正常引用相应的资源,这项解决方案称为protocol-relative URL，暂且可译作 协议相对 URL。</p>
-<p>使用协议相对 URL，无论你是使用HTTPS，还是HTTP访问页面，浏览器都会以与你相同的协议请求页面中的资源，避免弹出警告信息</p>
+              <p>混合内容，是因为同时加载了 HTTP 和 HTTPS 内容以显示同一个页面，且通过 HTTPS 加载的初始请求是安全的。现代浏览器会针对此类型的内容显示警告，以向用户表明此页面包含不安全的资源。</p>
+<p>浏览器会<strong>根据不同的混合内容类型</strong>进行警告或拦截。</p>
+<h2 id="HTTPS-的优势"><a href="#HTTPS-的优势" class="headerlink" title="HTTPS 的优势"></a>HTTPS 的优势</h2><ul>
+<li>身份验证<ul>
+<li>HTTPS 让浏览器检查并确保其已打开正确的网站，并且没有被重定向到恶意的网站。</li>
+</ul>
+</li>
+<li>数据完整性<ul>
+<li>HTTPS 让浏览器检测是否有攻击者更改了浏览器接收的任何数据。</li>
+</ul>
+</li>
+<li>保密性<ul>
+<li>HTTPS 可防止攻击者窃取浏览器的请求，跟踪访问的网站或窃取已发送或接收的信息。</li>
+</ul>
+</li>
+</ul>
+<h2 id="混合内容类型与相关安全威胁"><a href="#混合内容类型与相关安全威胁" class="headerlink" title="混合内容类型与相关安全威胁"></a>混合内容类型与相关安全威胁</h2><p>混合内容有两种：主动混合内容和被动混合内容</p>
+<p><strong>被动混合内容</strong>指的是<strong>不与页面其余部分进行交互</strong>的内容，从而使中间人攻击在拦截或更改该内容时能够执行的操作受限。<strong>被动混合内容包括图像、视频和音频内容</strong>，以及无法与页面其余部分进行交互的其他资源。大多数浏览器仍向用户渲染此类型的混合内容，但是也会显示警告，因为这些内容会给您的网站和用户带来安全风险和隐私风险。</p>
+<p><strong>主动混合内容</strong>作为整体<strong>与页面进行交互</strong>，并且几乎允许攻击者对页面进行任何操作。 主动混合内容包括浏览器<strong>可下载和执行的脚本、样式表、iframe、flash 资源及其他代码</strong>。许多浏览器都会默认阻止此类型的内容。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content?hl=zh-cn#_11" target="_blank" rel="noopener">https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content?hl=zh-cn#_11</a></p>
 
             </article>
             <hr>
@@ -214,9 +229,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
+                    
                       <a class="hover-with-bg" href="/tags/http/">http</a>
                     
-                      <a class="hover-with-bg" href="/tags/url/">url</a>
+                      <a class="hover-with-bg" href="/tags/https/">https</a>
                     
                   </div>
                 
@@ -229,18 +246,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/07/15/notes/web/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTPS%E9%A1%B5%E9%9D%A2%E5%8F%91%E9%80%81HTTP%E8%AF%B7%E6%B1%82/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HTTPS页面发送HTTP请求</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/07/14/notes/web/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/%E8%B7%A8%E5%9F%9F/">
-                        <span class="hidden-mobile">跨域方法</span>
+                      <a href="/2020/07/14/notes/web/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/%E9%93%BE%E6%8E%A5%E4%B8%8D%E6%B7%BB%E5%8A%A0%E5%8D%8F%E8%AE%AE/">
+                        <span class="hidden-mobile">链接不添加协议</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -379,7 +390,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "链接不添加协议&nbsp;",
+        "HTTPS页面发送HTTP请求&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
