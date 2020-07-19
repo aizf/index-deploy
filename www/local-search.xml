@@ -2783,6 +2783,203 @@
   
   
   <entry>
+    <title>Gulp任务(task)惰性获取数据</title>
+    <link href="/2019/11/07/notes/web/gulp/%E4%BB%BB%E5%8A%A1%E6%83%B0%E6%80%A7%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/"/>
+    <url>/2019/11/07/notes/web/gulp/%E4%BB%BB%E5%8A%A1%E6%83%B0%E6%80%A7%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/</url>
+    
+    <content type="html"><![CDATA[<p>项目中有多个深度不同目录存在未压缩的文件，要压缩这些代码目前想到的方式是以下步骤：</p><ol><li>通过<code>dfs</code>遍历所有文件夹</li><li>遍历过程中根据需要打包的文件创建对应的压缩任务，并将任务存入数组(<code>jsTasks</code>)</li><li><code>dfs</code>执行完成后，执行数组中的内容</li></ol><h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> js = parallel(...jsTasks);</code></pre></div><p>按照这种写法，<code>jsTasks</code>会在<code>dfs</code>执行前被立即被读取,因此<code>jsTasks</code>返回的数组的长度为<code>0</code></p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>将<code>parallel(...jsTasks)</code>在函数中执行，将<code>cb</code>传入作为结束标志。</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">js</span>(<span class="hljs-params">cb</span>) </span>&#123;    <span class="hljs-comment">// 这些是防止jsTasks.length真的为0</span>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"jsTasks: "</span>, jsTasks.length);    <span class="hljs-keyword">if</span> (jsTasks.length === <span class="hljs-number">0</span>) &#123; cb(); <span class="hljs-keyword">return</span>; &#125;;    <span class="hljs-comment">// 在js中执行parallel</span>    parallel(...jsTasks)(cb);&#125;</code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>Gulp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Gulp的一些常用插件</title>
+    <link href="/2019/11/06/notes/web/gulp/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
+    <url>/2019/11/06/notes/web/gulp/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="del"><a href="#del" class="headerlink" title="del"></a><code>del</code></h2><p>用来删除指定文件夹或文件</p><h2 id="gulp-clean-css"><a href="#gulp-clean-css" class="headerlink" title="gulp-clean-css"></a><code>gulp-clean-css</code></h2><p>压缩css</p><h2 id="gulp-uglify"><a href="#gulp-uglify" class="headerlink" title="gulp-uglify"></a><code>gulp-uglify</code></h2><p>压缩js，只支持ES5</p><h2 id="gulp-uglify-es"><a href="#gulp-uglify-es" class="headerlink" title="gulp-uglify-es"></a><code>gulp-uglify-es</code></h2><p>压缩js，支持ES6</p><h2 id="gulp-htmlmin"><a href="#gulp-htmlmin" class="headerlink" title="gulp-htmlmin"></a><code>gulp-htmlmin</code></h2><p>压缩html</p><h2 id="gulp-gzip"><a href="#gulp-gzip" class="headerlink" title="gulp-gzip"></a><code>gulp-gzip</code></h2><p>生成<code>.gzip</code>文件</p><h2 id="rollup"><a href="#rollup" class="headerlink" title="rollup"></a><code>rollup</code></h2><p><a href="https://www.rollupjs.com/" target="_blank" rel="noopener">https://www.rollupjs.com/</a></p><h2 id="gulp-babel"><a href="#gulp-babel" class="headerlink" title="gulp-babel"></a><code>gulp-babel</code></h2><p>Babel的Gulp插件</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>Gulp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Gulp简介</title>
+    <link href="/2019/11/06/notes/web/gulp/%E7%AE%80%E4%BB%8B/"/>
+    <url>/2019/11/06/notes/web/gulp/%E7%AE%80%E4%BB%8B/</url>
+    
+    <content type="html"><![CDATA[<p>Gulp是基于流的前端构建工具，在代码写好之后，通过gulp进行编译压缩。</p><p>Webpack 是前端资源模块化 管理和打包工具。从入口开始，递归找出所有依赖。</p><h2 id="Gulpfile"><a href="#Gulpfile" class="headerlink" title="Gulpfile"></a>Gulpfile</h2><p>gulpfile 是项目目录下名为 gulpfile.js （或者首字母大写 Gulpfile.js）的文件，在运行 gulp 命令时会被自动加载</p><h2 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h2><h3 id="导出任务"><a href="#导出任务" class="headerlink" title="导出任务"></a>导出任务</h3><p>任务（tasks）有 public（公开） 或 private（私有） 两种。</p><ul><li>公开任务（Public tasks） 从 gulpfile 中被导出（export），可以通过 gulp 命令直接调用。</li><li>私有任务（Private tasks） 被设计为在内部使用，通常作为 <code>series()</code> 或 <code>parallel()</code> 组合的组成部分。</li></ul><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123; series &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);<span class="hljs-comment">// 私有任务</span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clean</span>(<span class="hljs-params">cb</span>) </span>&#123;    <span class="hljs-comment">// body omitted</span>    cb();&#125;<span class="hljs-comment">// 函数被导出（export）了，因此是一个公开任务，并且可以被 `gulp` 命令直接调用。</span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span>(<span class="hljs-params">cb</span>) </span>&#123;    <span class="hljs-comment">// body omitted</span>    cb();&#125;exports.build = build;exports.default = series(clean, build);</code></pre></div><h3 id="组合任务"><a href="#组合任务" class="headerlink" title="组合任务"></a>组合任务</h3><p>Gulp 提供了两个强大的组合方法： <code>series()</code> 和 <code>parallel()</code>来组合任务,并且可以相互嵌套。</p><ul><li><code>series()</code>：<ul><li>任务（task）按顺序执行</li><li>组合多个任务时，任何一个任务的错误将导致整个任务组合结束</li></ul></li><li><code>parallel()</code>：<ul><li>以最大并发来运行的任务</li><li>组合多个任务时，一个任务的错误将结束整个任务组合的结束，但是其他并行的任务可能会执行完，也可能没有执行完。</li></ul></li></ul><h2 id="gulp-异步任务（task）规范"><a href="#gulp-异步任务（task）规范" class="headerlink" title="gulp 异步任务（task）规范"></a>gulp 异步任务（task）规范</h2><p>gulp 不再支持同步任务，但是可以通过以下方式当作异步任务。</p><h3 id="有返回值"><a href="#有返回值" class="headerlink" title="有返回值"></a>有返回值</h3><p>当从任务（task）中返回 <code>stream</code>、<code>promise</code>、<code>event emitter</code>、<code>child process</code> 或 <code>observable</code> 时，成功或错误值将通知 gulp 是否继续执行或结束。如果任务（task）出错，gulp 将立即结束执行并显示该错误。</p><h3 id="无返回值"><a href="#无返回值" class="headerlink" title="无返回值"></a>无返回值</h3><h4 id="使用-callback"><a href="#使用-callback" class="headerlink" title="使用 callback"></a>使用 callback</h4><p>callback 将作为唯一一个名为 <code>cb()</code> 的参数，作为任务结束的标志。可以通过<code>cb()</code>传递错误</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callbackTask</span>(<span class="hljs-params">cb</span>) </span>&#123;    <span class="hljs-comment">// `cb()` should be called by some async work</span>    cb();&#125;exports.default = callbackTask;</code></pre></div><h4 id="使用-async-await"><a href="#使用-async-await" class="headerlink" title="使用 async/await"></a>使用 async/await</h4><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">asyncAwaitTask</span>(<span class="hljs-params"></span>) </span>&#123;    <span class="hljs-keyword">const</span> &#123; version &#125; = fs.readFileSync(<span class="hljs-string">'package.json'</span>);    <span class="hljs-built_in">console</span>.log(version);    <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'some result'</span>);&#125;exports.default = asyncAwaitTask;</code></pre></div><h2 id="处理文件"><a href="#处理文件" class="headerlink" title="处理文件"></a>处理文件</h2><p>gulp基于流处理文件，一个通常的形式如下：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">task1</span>(<span class="hljs-params"></span>) </span>&#123;    <span class="hljs-keyword">return</span> src(<span class="hljs-string">'src/*.js'</span>)        .pipe(babel())        .pipe(dest(<span class="hljs-string">'output/'</span>));&#125;</code></pre></div><ol><li>通过<code>src()</code>从文件系统中<strong>读取文件</strong>然后生成一个 Node 流（stream）</li><li>通过pipe()，以插件作为参数，处理流</li><li><code>dest()</code> 接受一个输出目录作为参数，并且它还会产生一个 Node 流，通常作为终止流，将文件内容及文件属性<strong>写入到指定的目录</strong>中。</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>Gulp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PWA(渐进式网络应用程序)</title>
+    <link href="/2019/11/04/notes/web/webpack/PWA(%E6%B8%90%E8%BF%9B%E5%BC%8F%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)/"/>
+    <url>/2019/11/04/notes/web/webpack/PWA(%E6%B8%90%E8%BF%9B%E5%BC%8F%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)/</url>
+    
+    <content type="html"><![CDATA[<p>渐进式网络应用程序(Progressive Web Application - PWA)，是一种可以提供类似于原生应用程序(native app)体验的网络应用程序(web app)。PWA 可以用来做很多事。其中最重要的是，<strong>在离线(offline)时应用程序能够继续运行功能</strong>。这是通过使用名为 Service Workers 的网络技术来实现的。</p><h2 id="添加-workbox-webpack-plugin-插件"><a href="#添加-workbox-webpack-plugin-插件" class="headerlink" title="添加 workbox-webpack-plugin 插件"></a>添加 <code>workbox-webpack-plugin</code> 插件</h2><p>使用Google项目的Workbox来实现此目的，该项目提供的工具可帮助我们更轻松地配置 web app 的离线支持。</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// webpack.config.js</span><span class="hljs-keyword">const</span> WorkboxPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'workbox-webpack-plugin'</span>);plugins: [    <span class="hljs-keyword">new</span> WorkboxPlugin.GenerateSW(&#123;        <span class="hljs-comment">// 这些选项帮助 ServiceWorkers 快速启用</span>        <span class="hljs-comment">// 不允许遗留任何“旧的” ServiceWorkers</span>        clientsClaim: <span class="hljs-literal">true</span>,        skipWaiting: <span class="hljs-literal">true</span>    &#125;)],</code></pre></div><p><code>npm run build</code>后多出两个文件：</p><ul><li><code>service-worker.js</code>是 Service Worker 文件</li><li><code>workbox-abaa1409.js</code>是 <code>service-worker.js</code> 引用的文件</li></ul><h2 id="注册Service-Worker"><a href="#注册Service-Worker" class="headerlink" title="注册Service Worker"></a>注册<code>Service Worker</code></h2><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// index.js</span><span class="hljs-keyword">if</span> (<span class="hljs-string">'serviceWorker'</span> <span class="hljs-keyword">in</span> navigator) &#123;  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, () =&gt; &#123;    navigator.serviceWorker.register(<span class="hljs-string">'/service-worker.js'</span>).then(<span class="hljs-function"><span class="hljs-params">registration</span> =&gt;</span> &#123;      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'SW registered: '</span>, registration);    &#125;).catch(<span class="hljs-function"><span class="hljs-params">registrationError</span> =&gt;</span> &#123;      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'SW registration failed: '</span>, registrationError);    &#125;);  &#125;);&#125;</code></pre></div><p>之后停止服务器并刷新页面。如果浏览器能够支持 <code>Service Worker</code>，你应该可以看到你的应用程序还在正常运行。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>优化</tag>
+      
+      <tag>js</tag>
+      
+      <tag>webpack</tag>
+      
+      <tag>pwa</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>webpack的一些插件简介</title>
+    <link href="/2019/11/04/notes/web/webpack/%E4%B8%80%E4%BA%9B%E6%8F%92%E4%BB%B6%E7%AE%80%E4%BB%8B/"/>
+    <url>/2019/11/04/notes/web/webpack/%E4%B8%80%E4%BA%9B%E6%8F%92%E4%BB%B6%E7%AE%80%E4%BB%8B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="HotModuleReplacementPlugin"><a href="#HotModuleReplacementPlugin" class="headerlink" title="HotModuleReplacementPlugin"></a><code>HotModuleReplacementPlugin</code></h2><p>模块热替换插件，适用于开发环境。</p><h2 id="CleanWebpackPlugin"><a href="#CleanWebpackPlugin" class="headerlink" title="CleanWebpackPlugin"></a><code>CleanWebpackPlugin</code></h2><p>用于每次<code>npm run build</code>时清理<code>dist</code>文件夹</p><h2 id="CompressionWebpackPlugin"><a href="#CompressionWebpackPlugin" class="headerlink" title="CompressionWebpackPlugin"></a><code>CompressionWebpackPlugin</code></h2><p><code>npm run build</code>同时生成压缩版的文件，一般为<code>gzip</code>格式</p><h2 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a><code>HtmlWebpackPlugin</code></h2><p>生成一个 HTML5 文件， 其中包括使用 script 标签的 body 中的所有 webpack 包。</p><p>可以通过多个<code>HtmlWebpackPlugin</code>实例生成多个<code>html</code>文件</p><div class="hljs"><pre><code class="hljs js">entry: &#123;        index: <span class="hljs-string">'./src/index.js'</span>,        about: <span class="hljs-string">'./src/about.js'</span>&#125;,plugins: [    <span class="hljs-keyword">new</span> HtmlWebpackPlugin(&#123;        title: <span class="hljs-string">'index'</span>,        filename: <span class="hljs-string">'index.html'</span>,        chunks: [<span class="hljs-string">'index'</span>]    &#125;),    <span class="hljs-keyword">new</span> HtmlWebpackPlugin(&#123;        title: <span class="hljs-string">'about'</span>,        filename: <span class="hljs-string">'about.html'</span>,        chunks: [<span class="hljs-string">'about'</span>]    &#125;)]</code></pre></div><h2 id="ProvidePlugin"><a href="#ProvidePlugin" class="headerlink" title="ProvidePlugin"></a><code>ProvidePlugin</code></h2><ul><li>自动加载全局变量的模块</li><li>引入polyfill</li><li>综合以上两种方式，可以单独使用模块中的变量替代原有的变量(polyfill + 按需引入)</li></ul><p>对于<code>ProvidePlugin</code>引入的内容会被打包</p><h2 id="DefinePlugin"><a href="#DefinePlugin" class="headerlink" title="DefinePlugin"></a><code>DefinePlugin</code></h2><p>允许创建一个在编译时可以配置的全局常量。这可能会对开发模式和发布模式的构建允许不同的行为非常有用。通常使用该插件来判别代码运行的环境变量</p><h2 id="SplitChunksPlugin"><a href="#SplitChunksPlugin" class="headerlink" title="SplitChunksPlugin"></a><code>SplitChunksPlugin</code></h2><p>抽取重复依赖模块</p><h2 id="WorkboxPlugin"><a href="#WorkboxPlugin" class="headerlink" title="WorkboxPlugin"></a><code>WorkboxPlugin</code></h2><p>配置PWA</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>webpack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>webpack shimming</title>
+    <link href="/2019/11/03/notes/web/webpack/shimming/"/>
+    <url>/2019/11/03/notes/web/webpack/shimming/</url>
+    
+    <content type="html"><![CDATA[<p>有两种应用场景：</p><ul><li>设置全局变量</li><li>polyfill 浏览器功能</li></ul><h2 id="shimming-全局变量"><a href="#shimming-全局变量" class="headerlink" title="shimming 全局变量"></a>shimming 全局变量</h2><p>添加<code>ProvidePlugin</code></p><div class="hljs"><pre><code class="hljs js">plugins: [    <span class="hljs-keyword">new</span> webpack.ProvidePlugin(&#123;        _: <span class="hljs-string">'lodash'</span>    &#125;)]</code></pre></div><h3 id="暴露某个模块中单个值"><a href="#暴露某个模块中单个值" class="headerlink" title="暴露某个模块中单个值"></a>暴露某个模块中单个值</h3><div class="hljs"><pre><code class="hljs js">plugins: [    <span class="hljs-keyword">new</span> webpack.ProvidePlugin(&#123;        <span class="hljs-comment">// _: 'lodash',</span>        join: [<span class="hljs-string">'lodash'</span>, <span class="hljs-string">'join'</span>]    &#125;)]</code></pre></div><h3 id="通过使用-imports-loader-覆写-this"><a href="#通过使用-imports-loader-覆写-this" class="headerlink" title="通过使用 imports-loader 覆写 this"></a>通过使用 <code>imports-loader</code> 覆写 <code>this</code></h3><p>当模块运行在 CommonJS 环境下， <code>this</code> 指向的是 <code>module.exports</code>。</p><h3 id="使用-exports-loader，将一个全局变量作为一个普通的模块来导出"><a href="#使用-exports-loader，将一个全局变量作为一个普通的模块来导出" class="headerlink" title="使用 exports-loader，将一个全局变量作为一个普通的模块来导出"></a>使用 <code>exports-loader</code>，将一个全局变量作为一个普通的模块来导出</h3><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// globals.js</span><span class="hljs-keyword">var</span> file = <span class="hljs-string">'blah.txt'</span>;<span class="hljs-keyword">var</span> helpers = &#123;    test: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'test something'</span>); &#125;,    parse: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'parse something'</span>); &#125;&#125;</code></pre></div><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// webpack.config.js</span>&#123;    test: <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'globals.js'</span>),    use: <span class="hljs-string">'exports-loader?file,parse=helpers.parse'</span>&#125;</code></pre></div><p>之后可以从 <code>entry</code> 入口文件中(即 <code>src/index.js</code>)，我们能 <code>import { file, parse } from &#39;./globals.js&#39;;</code> ，然后一切将顺利进行。</p><h2 id="加载-polyfills"><a href="#加载-polyfills" class="headerlink" title="加载 polyfills"></a>加载 polyfills</h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>webpack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>webpack解决缓存问题</title>
+    <link href="/2019/11/03/notes/web/webpack/%E8%A7%A3%E5%86%B3%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/"/>
+    <url>/2019/11/03/notes/web/webpack/%E8%A7%A3%E5%86%B3%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p>由于浏览器缓存问题，我们修改文件可能不会立即更新页面，因此需要一些必要的配置。</p><h2 id="普通文件"><a href="#普通文件" class="headerlink" title="普通文件"></a>普通文件</h2><p>通过在输出文件中加入<code>[chunkhash]</code></p><div class="hljs"><pre><code class="hljs js">&#123;    output: &#123;        filename: <span class="hljs-string">'[name].[chunkhash].js'</span>,        path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>)    &#125;&#125;</code></pre></div><h2 id="公共部分"><a href="#公共部分" class="headerlink" title="公共部分"></a>公共部分</h2><h3 id="将-webpack-的-runtime-信息单独打包出来"><a href="#将-webpack-的-runtime-信息单独打包出来" class="headerlink" title="将 webpack 的 runtime 信息单独打包出来"></a>将 webpack 的 runtime 信息单独打包出来</h3><div class="hljs"><pre><code class="hljs js">optimization: &#123;    runtimeChunk: <span class="hljs-string">'single'</span>,&#125;,</code></pre></div><p>设置了<code>runtimeChunk</code>，就会打包<code>runtime</code>，<code>single</code>为打包为一个，<code>true</code> 或 <code>multiple</code>会打包多个。</p><p>便于缓存。</p><h3 id="设置cacheGroups"><a href="#设置cacheGroups" class="headerlink" title="设置cacheGroups"></a>设置<code>cacheGroups</code></h3><p>将第三方库(library)（例如 lodash 或 react）提取到单独的 vendor chunk 文件中，是比较推荐的做法，这是因为，它们很少像本地的源代码那样频繁修改。</p><div class="hljs"><pre><code class="hljs js">splitChunks: &#123;    cacheGroups: &#123;        vendor: &#123;        test: <span class="hljs-regexp">/[\\/]node_modules[\\/]/</span>,        name: <span class="hljs-string">'vendors'</span>,        chunks: <span class="hljs-string">'all'</span>,        &#125;,    &#125;,&#125;,</code></pre></div><h2 id="模块标识符-Module-Identifiers"><a href="#模块标识符-Module-Identifiers" class="headerlink" title="模块标识符(Module Identifiers)"></a>模块标识符(Module Identifiers)</h2><p>在<code>index.js</code>中通过<code>import</code>引入<code>print.js</code>，会造成根据<code>cacheGroups</code>打包的<code>vendor</code>的<code>[chunkhash]</code>发生变化</p><p><code>vendor</code> bundle 会随着自身的 <code>module.id</code> 的修改，而发生变化</p><p>通过<code>moduleIds: &#39;hashed&#39;</code>可以修复。</p><div class="hljs"><pre><code class="hljs js">optimization: &#123;    moduleIds: <span class="hljs-string">'hashed'</span>,    runtimeChunk: <span class="hljs-string">'single'</span>,    splitChunks: &#123;        cacheGroups: &#123;          vendor: &#123;            test: <span class="hljs-regexp">/[\\/]node_modules[\\/]/</span>,            name: <span class="hljs-string">'vendors'</span>,            chunks: <span class="hljs-string">'all'</span>,          &#125;,        &#125;,    &#125;,&#125;,</code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>优化</tag>
+      
+      <tag>js</tag>
+      
+      <tag>webpack</tag>
+      
+      <tag>cache</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>webpack代码分离</title>
+    <link href="/2019/11/03/notes/web/webpack/%E4%BB%A3%E7%A0%81%E5%88%86%E7%A6%BB/"/>
+    <url>/2019/11/03/notes/web/webpack/%E4%BB%A3%E7%A0%81%E5%88%86%E7%A6%BB/</url>
+    
+    <content type="html"><![CDATA[<p>代码分离是 webpack 中最引人注目的特性之一。此特性能够把代码分离到不同的 bundle 中，然后可以按需加载或并行加载这些文件。</p><p>代码分离可以用于获取更小的 bundle，以及控制资源加载优先级，如果使用合理，会极大影响加载时间。</p><p>有三种常用的代码分离方法：</p><ul><li>使用 entry 手动地分离</li><li>使用<code>SplitChunksPlugin</code></li><li>动态导入</li></ul><h2 id="入口起点-entry-points"><a href="#入口起点-entry-points" class="headerlink" title="入口起点(entry points)"></a>入口起点(entry points)</h2><p>在webpack.config.js中设置如下：</p><div class="hljs"><pre><code class="hljs js">entry: &#123;   index: <span class="hljs-string">'./src/index.js'</span>,   another: <span class="hljs-string">'./src/another-module.js'</span> &#125;,</code></pre></div><p>优点：简单直观</p><p>缺点：公共模块会被重复打包</p><h2 id="使用SplitChunksPlugin"><a href="#使用SplitChunksPlugin" class="headerlink" title="使用SplitChunksPlugin"></a>使用<code>SplitChunksPlugin</code></h2><p>在webpack.config.js中设置如下：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;    entry: &#123;        index: <span class="hljs-string">'./src/index.js'</span>,        another: <span class="hljs-string">'./src/another-module.js'</span>,    &#125;,    output: &#123;        filename: <span class="hljs-string">'[name].bundle.js'</span>,        path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),    &#125;,    optimization: &#123;        splitChunks: &#123;            chunks: <span class="hljs-string">'all'</span>,        &#125;,    &#125;,&#125;;</code></pre></div><h2 id="动态导入"><a href="#动态导入" class="headerlink" title="动态导入"></a>动态导入</h2><p>在index.js中按照以下形式：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getComponent</span>(<span class="hljs-params"></span>) </span>&#123;  <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);  <span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">default</span>: _ &#125; = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackChunkName: "lodash" */</span> <span class="hljs-string">'lodash'</span>);  element.innerHTML = _.join([<span class="hljs-string">'Hello'</span>, <span class="hljs-string">'webpack'</span>], <span class="hljs-string">' '</span>);  <span class="hljs-keyword">return</span> element;&#125;</code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>webpack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>webpack配置懒加载</title>
+    <link href="/2019/11/03/notes/web/webpack/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+    <url>/2019/11/03/notes/web/webpack/%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.webpackjs.com/guides/lazy-loading/" target="_blank" rel="noopener">https://www.webpackjs.com/guides/lazy-loading/</a></p><p><a href="https://webpack.js.org/guides/code-splitting/" target="_blank" rel="noopener">https://webpack.js.org/guides/code-splitting/</a></p><p>懒加载或者按需加载，是一种很好的优化网页或应用的方式。</p><p>这种方式实际上是先把你的代码在一些逻辑断点处分离开，然后在一些代码块中完成某些操作后，立即引用或即将引用另外一些新的代码块。这样加快了应用的初始加载速度，减轻了它的总体体积。</p><h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><p>通过调用函数动态的<code>import</code></p><div class="hljs"><pre><code class="hljs js">button.onclick = <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackChunkName: "print" */</span> <span class="hljs-string">'./print'</span>).then(<span class="hljs-function"><span class="hljs-params">module</span> =&gt;</span> &#123;    <span class="hljs-comment">// 通过module.default加载export default</span>    <span class="hljs-keyword">var</span> print = <span class="hljs-built_in">module</span>.default;    print();    &#125;);</code></pre></div><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>可以设置<code>Prefetching</code>/<code>Preloading</code></p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackPrefetch: true */</span> <span class="hljs-string">'LoginModal'</span>);<span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackPreload: true */</span> <span class="hljs-string">'ChartingLibrary'</span>);</code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>webpack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>docker 安装</title>
     <link href="/2019/08/21/notes/docker/%E5%AE%89%E8%A3%85/"/>
     <url>/2019/08/21/notes/docker/%E5%AE%89%E8%A3%85/</url>

@@ -1,224 +1,16 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Blog">
-  <meta name="author" content="Ai Zf">
-  <meta name="keywords" content="">
-  <title>sass学习笔记 - Blog</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css" />
-  
-
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script  src="/js/utils.js" ></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener">
-                <i class="iconfont icon-github-fill"></i>
-                GitHub
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-              
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1.1k 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      15
-       分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
-            
-            <article class="markdown-body">
-              <p><a href="https://www.sass.hk/guide/" target="_blank" rel="noopener">https://www.sass.hk/guide/</a></p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>sass使用<code>$</code>符号来标识变量</p>
-<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><div class="hljs"><pre><code class="hljs sass">$highlight-color: #F90;
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="description" content="Blog"><meta name="author" content="Ai Zf"><meta name="keywords" content=""><title>sass学习笔记 - Blog</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="/lib/hint/hint.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><script src="/js/utils.js"></script><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>Aizf</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="https://github.com/aizf/" target="_blank" rel="noopener"><i class="iconfont icon-github-fill"></i> GitHub</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/default.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.1k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 15 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p><a href="https://www.sass.hk/guide/" target="_blank" rel="noopener">https://www.sass.hk/guide/</a></p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>sass使用<code>$</code>符号来标识变量</p><h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><div class="hljs"><pre><code class="hljs sass">$highlight-color: #F90;
 $highlight-border: 1px solid $highlight-color;
 .selected &#123;
   border: $highlight-border;
 &#125;
 
-$basic-border: 1px solid black;</code></pre></div>
-
-<p>变量可以在css规则块定义之外存在。</p>
-<p>当变量定义在css规则块内，那么该变量只能在此规则块内使用。</p>
-<p>在sass的大 多数地方，中划线(-)命名的内容和下划线(_)命名的内容是互通的</p>
-<h2 id="嵌套CSS-规则"><a href="#嵌套CSS-规则" class="headerlink" title="嵌套CSS 规则"></a>嵌套CSS 规则</h2><div class="hljs"><pre><code class="hljs sass">#content &#123;
+$basic-border: 1px solid black;</code></pre></div><p>变量可以在css规则块定义之外存在。</p><p>当变量定义在css规则块内，那么该变量只能在此规则块内使用。</p><p>在sass的大 多数地方，中划线(-)命名的内容和下划线(_)命名的内容是互通的</p><h2 id="嵌套CSS-规则"><a href="#嵌套CSS-规则" class="headerlink" title="嵌套CSS 规则"></a>嵌套CSS 规则</h2><div class="hljs"><pre><code class="hljs sass">#content &#123;
   article &#123;
     h1 &#123; color: #333 &#125;
     p &#123; margin-bottom: 1.4em &#125;
   &#125;
   aside &#123; background-color: #EEE &#125;
-&#125;</code></pre></div>
-
-<h3 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h3><div class="hljs"><pre><code class="hljs sass">article a &#123;
+&#125;</code></pre></div><h3 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h3><div class="hljs"><pre><code class="hljs sass">article a &#123;
   color: blue;
   :hover &#123; color: red &#125;
 &#125;
@@ -229,9 +21,7 @@ article a &#123;
 
 article a :hover &#123;
   color: red;
-&#125;</code></pre></div>
-
-<div class="hljs"><pre><code class="hljs sass">article a &#123;
+&#125;</code></pre></div><div class="hljs"><pre><code class="hljs sass">article a &#123;
   color: blue;
   &amp;:hover &#123; color: red &#125;
 &#125;
@@ -242,10 +32,7 @@ article a &#123;
 
 article a:hover &#123;
   color: red;
-&#125;</code></pre></div>
-
-<h3 id="群组选择器的嵌套"><a href="#群组选择器的嵌套" class="headerlink" title="群组选择器的嵌套"></a>群组选择器的嵌套</h3><p><strong>注意：</strong>群组选择器的规则嵌套生成的css。虽然sass让你的样式表看上去很小，但实际生成的css却可能非常大，这会降低网站的速度。</p>
-<div class="hljs"><pre><code class="hljs sass">.container &#123;
+&#125;</code></pre></div><h3 id="群组选择器的嵌套"><a href="#群组选择器的嵌套" class="headerlink" title="群组选择器的嵌套"></a>群组选择器的嵌套</h3><p><strong>注意：</strong>群组选择器的规则嵌套生成的css。虽然sass让你的样式表看上去很小，但实际生成的css却可能非常大，这会降低网站的速度。</p><div class="hljs"><pre><code class="hljs sass">.container &#123;
   h1, h2, h3 &#123;margin-bottom: .8em&#125;
 &#125;
 
@@ -254,9 +41,7 @@ aside &#123;
   a &#123;
     color: blue
   &#125;
-&#125;</code></pre></div>
-
-<h3 id="子组合选择器和同层组合选择器：-gt-、-和"><a href="#子组合选择器和同层组合选择器：-gt-、-和" class="headerlink" title="子组合选择器和同层组合选择器：&gt;、+和~"></a>子组合选择器和同层组合选择器：&gt;、+和~</h3><div class="hljs"><pre><code class="hljs sass">article &#123;
+&#125;</code></pre></div><h3 id="子组合选择器和同层组合选择器：-gt-、-和"><a href="#子组合选择器和同层组合选择器：-gt-、-和" class="headerlink" title="子组合选择器和同层组合选择器：&gt;、+和~"></a>子组合选择器和同层组合选择器：&gt;、+和~</h3><div class="hljs"><pre><code class="hljs sass">article &#123;
   ~ article &#123; border-top: 1px dashed #ccc &#125;
   &gt; section &#123; background: #eee &#125;
   dl &gt; &#123;
@@ -264,11 +49,7 @@ aside &#123;
     dd &#123; color: #555 &#125;
   &#125;
   nav + &amp; &#123; margin-top: 0 &#125;
-&#125;</code></pre></div>
-
-<h3 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h3><p>在sass中，除了CSS选择器，属性也可以进行嵌套。</p>
-<p>加<code>:</code></p>
-<div class="hljs"><pre><code class="hljs sass">nav &#123;
+&#125;</code></pre></div><h3 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h3><p>在sass中，除了CSS选择器，属性也可以进行嵌套。</p><p>加<code>:</code></p><div class="hljs"><pre><code class="hljs sass">nav &#123;
   border: &#123;
   style: solid;
   width: 1px;
@@ -280,9 +61,7 @@ nav &#123;
   border-style: solid;
   border-width: 1px;
   border-color: #ccc;
-&#125;</code></pre></div>
-
-<div class="hljs"><pre><code class="hljs sass">nav &#123;
+&#125;</code></pre></div><div class="hljs"><pre><code class="hljs sass">nav &#123;
   border: 1px solid #ccc &#123;
   left: 0px;
   right: 0px;
@@ -293,33 +72,8 @@ nav &#123;
   border: 1px solid #ccc;
   border-left: 0px;
   border-right: 0px;
-&#125;</code></pre></div>
-
-<h2 id="导入SASS文件"><a href="#导入SASS文件" class="headerlink" title="导入SASS文件"></a>导入SASS文件</h2><p>sass也有一个<code>@import</code>规则，但不同的是，sass的<code>@import</code>规则在生成css文件时就把相关文件导入进来。</p>
-<p>这意味着所有相关的样式被<strong>归纳到了同一个css文件中</strong>，而<strong>无需发起额外的下载请求</strong>。</p>
-<p>使用sass的@import规则并不需要指明被导入文件的全名。你可以省略.sass或.scss文件后缀</p>
-<h3 id="使用SASS部分文件"><a href="#使用SASS部分文件" class="headerlink" title="使用SASS部分文件"></a>使用SASS部分文件</h3><p>sass<strong>局部文件</strong>的文件名以下划线开头。</p>
-<p>这样，sass就不会在编译时单独编译这个文件输出css，而只把这个文件用作导入。</p>
-<p>当你<code>@import</code>一个局部文件时，还可以不写文件的全名，即省略文件名开头的下划线。</p>
-<p>局部文件可以被多个不同的文件引用。</p>
-<h3 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值"></a>默认变量值</h3><p>你可能希望导入者可以定制修改sass库文件中的某些值。使用sass的!default标签可以实现这个目的。</p>
-<p>!default用于变量, 像css属性中!important标签的对立面，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</p>
-<h3 id="嵌套导入"><a href="#嵌套导入" class="headerlink" title="嵌套导入"></a>嵌套导入</h3><div class="hljs"><pre><code class="hljs sass">.blue-theme &#123;@import &quot;blue-theme&quot;&#125;</code></pre></div>
-
-<h3 id="原生的CSS导入"><a href="#原生的CSS导入" class="headerlink" title="原生的CSS导入"></a>原生的CSS导入</h3><p>会造成浏览器阻塞</p>
-<p>下列三种情况下会生成原生的CSS@import</p>
-<ul>
-<li>被导入文件的名字以.css结尾；</li>
-<li>被导入文件的名字是一个URL地址（比如<a href="http://www.sass.hk/css/css.css），由此可用谷歌字体API提供的相应服务；" target="_blank" rel="noopener">http://www.sass.hk/css/css.css），由此可用谷歌字体API提供的相应服务；</a></li>
-<li>被导入文件的名字是CSS的url()值。</li>
-</ul>
-<p>可以把原始的css文件改名为.scss后缀，即可直接导入。</p>
-<h2 id="静默注释"><a href="#静默注释" class="headerlink" title="静默注释"></a>静默注释</h2><div class="hljs"><pre><code class="hljs sass">&#x2F;&#x2F; 这种注释内容不会出现在生成的css文件中
-&#x2F;* 这种注释内容会出现在生成的css文件中 *&#x2F;</code></pre></div>
-
-<h2 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h2><p>混合器使用<code>@mixin</code>标识符定义</p>
-<p>通过<code>@include</code>来使用这个混合器</p>
-<div class="hljs"><pre><code class="hljs sass">@mixin rounded-corners &#123;
+&#125;</code></pre></div><h2 id="导入SASS文件"><a href="#导入SASS文件" class="headerlink" title="导入SASS文件"></a>导入SASS文件</h2><p>sass也有一个<code>@import</code>规则，但不同的是，sass的<code>@import</code>规则在生成css文件时就把相关文件导入进来。</p><p>这意味着所有相关的样式被<strong>归纳到了同一个css文件中</strong>，而<strong>无需发起额外的下载请求</strong>。</p><p>使用sass的@import规则并不需要指明被导入文件的全名。你可以省略.sass或.scss文件后缀</p><h3 id="使用SASS部分文件"><a href="#使用SASS部分文件" class="headerlink" title="使用SASS部分文件"></a>使用SASS部分文件</h3><p>sass<strong>局部文件</strong>的文件名以下划线开头。</p><p>这样，sass就不会在编译时单独编译这个文件输出css，而只把这个文件用作导入。</p><p>当你<code>@import</code>一个局部文件时，还可以不写文件的全名，即省略文件名开头的下划线。</p><p>局部文件可以被多个不同的文件引用。</p><h3 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值"></a>默认变量值</h3><p>你可能希望导入者可以定制修改sass库文件中的某些值。使用sass的!default标签可以实现这个目的。</p><p>!default用于变量, 像css属性中!important标签的对立面，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</p><h3 id="嵌套导入"><a href="#嵌套导入" class="headerlink" title="嵌套导入"></a>嵌套导入</h3><div class="hljs"><pre><code class="hljs sass">.blue-theme &#123;@import &quot;blue-theme&quot;&#125;</code></pre></div><h3 id="原生的CSS导入"><a href="#原生的CSS导入" class="headerlink" title="原生的CSS导入"></a>原生的CSS导入</h3><p>会造成浏览器阻塞</p><p>下列三种情况下会生成原生的CSS@import</p><ul><li>被导入文件的名字以.css结尾；</li><li>被导入文件的名字是一个URL地址（比如<a href="http://www.sass.hk/css/css.css），由此可用谷歌字体API提供的相应服务；" target="_blank" rel="noopener">http://www.sass.hk/css/css.css），由此可用谷歌字体API提供的相应服务；</a></li><li>被导入文件的名字是CSS的url()值。</li></ul><p>可以把原始的css文件改名为.scss后缀，即可直接导入。</p><h2 id="静默注释"><a href="#静默注释" class="headerlink" title="静默注释"></a>静默注释</h2><div class="hljs"><pre><code class="hljs sass">&#x2F;&#x2F; 这种注释内容不会出现在生成的css文件中
+&#x2F;* 这种注释内容会出现在生成的css文件中 *&#x2F;</code></pre></div><h2 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h2><p>混合器使用<code>@mixin</code>标识符定义</p><p>通过<code>@include</code>来使用这个混合器</p><div class="hljs"><pre><code class="hljs sass">@mixin rounded-corners &#123;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -329,19 +83,13 @@ notice &#123;
     background-color: green;
     border: 2px solid #00aa00;
     @include rounded-corners;
-&#125;</code></pre></div>
-
-<p>转换为=&gt;</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.notice</span> &#123;
+&#125;</code></pre></div><p>转换为=&gt;</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.notice</span> &#123;
   <span class="hljs-attribute">background-color</span>: green;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#00aa00</span>;
   <span class="hljs-attribute">-moz-border-radius</span>: <span class="hljs-number">5px</span>;
   <span class="hljs-attribute">-webkit-border-radius</span>: <span class="hljs-number">5px</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
-&#125;</code></pre></div>
-
-<h3 id="何时使用混合器"><a href="#何时使用混合器" class="headerlink" title="何时使用混合器"></a>何时使用混合器</h3><p>重复的一段样式</p>
-<h3 id="混合器中的CSS规则"><a href="#混合器中的CSS规则" class="headerlink" title="混合器中的CSS规则"></a>混合器中的CSS规则</h3><h3 id="给混合器传参"><a href="#给混合器传参" class="headerlink" title="给混合器传参"></a>给混合器传参</h3><div class="hljs"><pre><code class="hljs sass">@mixin link-colors($normal, $hover, $visited) &#123;
+&#125;</code></pre></div><h3 id="何时使用混合器"><a href="#何时使用混合器" class="headerlink" title="何时使用混合器"></a>何时使用混合器</h3><p>重复的一段样式</p><h3 id="混合器中的CSS规则"><a href="#混合器中的CSS规则" class="headerlink" title="混合器中的CSS规则"></a>混合器中的CSS规则</h3><h3 id="给混合器传参"><a href="#给混合器传参" class="headerlink" title="给混合器传参"></a>给混合器传参</h3><div class="hljs"><pre><code class="hljs sass">@mixin link-colors($normal, $hover, $visited) &#123;
   color: $normal;
   &amp;:hover &#123; color: $hover; &#125;
   &amp;:visited &#123; color: $visited; &#125;
@@ -356,9 +104,7 @@ a &#123;
 
 a &#123; color: blue; &#125;
 a:hover &#123; color: red; &#125;
-a:visited &#123; color: green; &#125;</code></pre></div>
-
-<h3 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h3><div class="hljs"><pre><code class="hljs sass">@mixin link-colors(
+a:visited &#123; color: green; &#125;</code></pre></div><h3 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h3><div class="hljs"><pre><code class="hljs sass">@mixin link-colors(
     $normal,
     $hover: $normal,
     $visited: $normal
@@ -367,195 +113,7 @@ a:visited &#123; color: green; &#125;</code></pre></div>
   color: $normal;
   &amp;:hover &#123; color: $hover; &#125;
   &amp;:visited &#123; color: $visited; &#125;
-&#125;</code></pre></div>
-
-<h2 id="使用选择器继承来精简CSS"><a href="#使用选择器继承来精简CSS" class="headerlink" title="使用选择器继承来精简CSS"></a>使用选择器继承来精简CSS</h2>
-            </article>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/sass/">sass</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/07/14/notes/web/HTML/document.ready%E5%92%8Cwindow.onload%E7%9A%84%E5%8C%BA%E5%88%AB/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">document.ready和window.onload的区别</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/07/14/notes/web/CSS/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7/">
-                        <span class="hidden-mobile">高度塌陷</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
-              
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-  </main>
-
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
-
-    
-
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
-<script  src="/js/main.js" ></script>
-
-<!-- Plugins -->
-
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-
-
-
-
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: 'article.markdown-body',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "sass学习笔记&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
+&#125;</code></pre></div><h2 id="使用选择器继承来精简CSS"><a href="#使用选择器继承来精简CSS" class="headerlink" title="使用选择器继承来精简CSS"></a>使用选择器继承来精简CSS</h2></article><hr><div><div class="post-metas mb-3"><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/sass/">sass</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"><a href="/2020/07/14/notes/web/HTML/document.ready%E5%92%8Cwindow.onload%E7%9A%84%E5%8C%BA%E5%88%AB/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">document.ready和window.onload的区别</span> <span class="visible-mobile">上一篇</span></a></div><div class="post-next col-6"><a href="/2020/07/14/notes/web/CSS/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7/"><span class="hidden-mobile">高度塌陷</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div></div></footer><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/debouncer.js"></script><script src="/js/main.js"></script><script defer="defer" src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"article.markdown-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","sass学习笔记&nbsp;"],cursorChar:"_",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
       placement: "right",
       visible: "hover",
       
@@ -565,55 +123,4 @@ a:visited &#123; color: green; &#125;</code></pre></div>
     for (item of el) {
       res.push(".markdown-body > " + item)
     }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
-      }
-    );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script></body></html>
