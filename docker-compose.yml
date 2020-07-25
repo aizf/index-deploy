@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nginx:
-    # restart: always
+    restart: always
     image: nginx:alpine
     container_name: index_nginx
     ports:
@@ -12,8 +12,7 @@ services:
       - ./conf.d:/etc/nginx/conf.d
       - ./www:/var/www:ro
       - ./log/nginx:/var/log/nginx
-      - /etc/letsencrypt/archive/aizf.site:/etc/letsencrypt/archive/aizf.site
-      - /etc/letsencrypt/live/aizf.site:/etc/letsencrypt/live/aizf.site
-      # - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt/archive:/etc/letsencrypt/archive
+      - /etc/letsencrypt/live:/etc/letsencrypt/live
     environment: 
       - TZ=Asia/Shanghai
